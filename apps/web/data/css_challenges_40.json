@@ -1,0 +1,2082 @@
+[
+  {
+    "id": "css-001",
+    "title": "Change Text Color",
+    "description": "Set the paragraph text color to blue.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Text Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p1'>Hello, CSS!</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Set the paragraph color to blue */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Paragraph text color is blue.",
+        "type": "dom",
+        "code": "const el=document.querySelector('#p1'); const s=getComputedStyle(el); const passed=[], failed=[]; if(s.color==='rgb(0, 0, 255)'){passed.push('a01')}else{failed.push('a01')} return {passedIds:passed, failedIds:failed, passed:failed.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use the color property."
+      },
+      {
+        "level": 2,
+        "text": "Target the #p1 element."
+      },
+      {
+        "level": 3,
+        "text": "#p1 { color: blue; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "selector",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Text Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p1'>Hello, CSS!</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#p1 { color: blue; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Text Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p1' style='color: blue'>Hello, CSS!</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* not needed */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-002",
+    "title": "Add a Red Border",
+    "description": "Add a 2px solid red border to the div with id='box'.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Red Border</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='box'>Hello border</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Add a red border to #box */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "#box has a 2px solid red border.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#box')); const passed=[], failed=[]; if(s.borderTopWidth==='2px' && s.borderTopStyle==='solid' && s.borderTopColor==='rgb(255, 0, 0)'){passed.push('a01')}else{failed.push('a01')} return {passedIds:passed, failedIds:failed, passed:failed.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use the border property."
+      },
+      {
+        "level": 2,
+        "text": "border: 2px solid red;"
+      },
+      {
+        "level": 3,
+        "text": "#box { border: 2px solid red; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "id",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Red Border</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='box'>Hello border</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#box { border: 2px solid red; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Red Border</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='box' style='border:2px solid red'>Hello border</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-003",
+    "title": "Center Text Horizontally",
+    "description": "Horizontally center the text inside the div using CSS.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Center Text Horizontally</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='centerme'>Center me!</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Center text in #centerme */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Text is centered.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#centerme')); const passed=[], failed=[]; if(s.textAlign==='center'){passed.push('a01')}else{failed.push('a01')} return {passedIds:passed, failedIds:failed, passed:failed.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use text-align."
+      },
+      {
+        "level": 2,
+        "text": "Target #centerme."
+      },
+      {
+        "level": 3,
+        "text": "#centerme { text-align: center; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "text-align",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Center Text Horizontally</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='centerme'>Center me!</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#centerme { text-align: center; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "flexbox",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Center Text Horizontally</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='centerme'>Center me!</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#centerme { display:flex; justify-content:center; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-004",
+    "title": "Add Padding",
+    "description": "Add 20px padding to the box.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Padding</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='pad'>Padding please</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Add 20px padding to the box. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Add 20px padding to the box.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#pad')); const p=[],f=[]; if(s.paddingTop==='20px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use padding."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "#pad { padding: 20px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Padding</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='pad'>Padding please</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#pad { padding: 20px; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Padding</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='pad' style=\"padding: 20px;\">Padding please</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-005",
+    "title": "Set Background Color",
+    "description": "Set the page background to yellow.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Set Background Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p>Background test</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Set the page background to yellow. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Set the page background to yellow.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.body); const p=[],f=[]; if(s.backgroundColor==='rgb(255, 255, 0)'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use background-color on body."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "body { background-color: yellow; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Set Background Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p>Background test</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "body { background-color: yellow; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Set Background Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p style=\"background-color: yellow;\">Background test</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-006",
+    "title": "Add Margin",
+    "description": "Add 30px margin-top to the paragraph.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Margin</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='mt'>A paragraph</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Add 30px margin-top to the paragraph. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Add 30px margin-top to the paragraph.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#mt')); const p=[],f=[]; if(s.marginTop==='30px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use margin-top."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "#mt { margin-top: 30px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Margin</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='mt'>A paragraph</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#mt { margin-top: 30px; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Margin</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='mt' style=\"margin-top: 30px;\">A paragraph</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-007",
+    "title": "Font Size",
+    "description": "Set the h1 font size to 2em.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Font Size</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='big'>Heading</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Set the h1 font size to 2em. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Set the h1 font size to 2em.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#big')); const p=[],f=[]; if(s.fontSize==='32px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use font-size."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "h1#big { font-size: 2em; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Font Size</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='big'>Heading</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "h1#big { font-size: 2em; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Font Size</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='big' style=\"font-size: 2em;\">Heading</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-008",
+    "title": "Monospace for Code",
+    "description": "Use a monospace font for the code element.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Monospace for Code</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <code id='c'>const x=1;</code>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Use a monospace font for the code element. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Use a monospace font for the code element.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#c')); const p=[],f=[]; if((s.fontFamily||'').toLowerCase().includes('monospace')){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use font-family."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "code#c { font-family: monospace; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Monospace for Code</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <code id='c'>const x=1;</code>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "code#c { font-family: monospace; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Monospace for Code</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <code id='c' style=\"font-family: monospace;\">const x=1;</code>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-009",
+    "title": "Make Text Bold",
+    "description": "Make all span text bold.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Make Text Bold</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <span id='b'>Bold me</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Make all span text bold. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Make all span text bold.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#b')); const p=[],f=[]; if(parseInt(s.fontWeight)>=700){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use font-weight."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "span#b { font-weight: bold; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Make Text Bold</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <span id='b'>Bold me</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "span#b { font-weight: bold; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Make Text Bold</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <span id='b' style=\"font-weight: bold;\">Bold me</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-010",
+    "title": "Italic Notes",
+    "description": "Italicize text in class 'note'.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Italic Notes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p class='note' id='n'>Note text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Italicize text in class 'note'. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Italicize text in class 'note'.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#n')); const p=[],f=[]; if(s.fontStyle==='italic'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use font-style."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": ".note#n { font-style: italic; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Italic Notes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p class='note' id='n'>Note text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".note#n { font-style: italic; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Italic Notes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p class='note' id='n' style=\"font-style: italic;\">Note text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-011",
+    "title": "Underline Links",
+    "description": "Underline all anchor links.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Underline Links</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <a id='lnk' href='#'>link</a>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Underline all anchor links. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Underline all anchor links.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#lnk')); const p=[],f=[]; if((s.textDecorationLine||'').includes('underline')){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use text-decoration."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "a#lnk { text-decoration: underline; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Underline Links</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <a id='lnk' href='#'>link</a>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "a#lnk { text-decoration: underline; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Underline Links</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <a id='lnk' href='#' style=\"text-decoration: underline;\">link</a>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-012",
+    "title": "Remove List Bullets",
+    "description": "Remove bullets from the unordered list.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove List Bullets</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='u'><li>One</li><li>Two</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Remove bullets from the unordered list. */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Remove bullets from the unordered list.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#u')); const p=[],f=[]; if(s.listStyleType==='none'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use list-style-type."
+      },
+      {
+        "level": 2,
+        "text": "Target the provided element."
+      },
+      {
+        "level": 3,
+        "text": "ul#u { list-style-type: none; padding-left: 0; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove List Bullets</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='u'><li>One</li><li>Two</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "ul#u { list-style-type: none; padding-left: 0; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove List Bullets</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='u' style=\"list-style-type: none; padding-left: 0;\"><li>One</li><li>Two</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* alternative */\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-013",
+    "title": "Style Ordered List Markers",
+    "description": "Make ordered list numbers red and bold using ::marker.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Style Ordered List Markers</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ol id='ol'><li>A</li><li>B</li></ol>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Style ::marker for #ol */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Marker is red and bold.",
+        "type": "dom",
+        "code": "const el=document.querySelector('#ol'); const m=getComputedStyle(el.querySelector('li'), '::marker'); const p=[],f=[]; if(m.color==='rgb(255, 0, 0)'){p.push('a01')}else{f.push('a01')} if((m.fontWeight+'')>='700'){p.push('a02')}else{f.push('a02')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use the ::marker pseudo-element."
+      },
+      {
+        "level": 2,
+        "text": "Target #ol li::marker."
+      },
+      {
+        "level": 3,
+        "text": "#ol li::marker { color: red; font-weight: bold; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "marker",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Style Ordered List Markers</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ol id='ol'><li>A</li><li>B</li></ol>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#ol li::marker { color: red; font-weight: bold; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "counterstyle",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Style Ordered List Markers</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ol id='ol'><li>A</li><li>B</li></ol>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#ol { counter-reset: i; } #ol li { counter-increment: i; } #ol li::marker { color:red; font-weight:bold; content: counter(i) '. '; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-014",
+    "title": "Responsive Image Max-Width",
+    "description": "Make the image fill its container width but not exceed 400px.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image Max-Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='wrap' style='width:500px'><img id='pic' src='x.jpg' alt='x'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Make #pic responsive with max-width 400px */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Computed width should be 400px due to max-width.",
+        "type": "dom",
+        "code": "const img=document.querySelector('#pic'); const p=[],f=[]; const w=getComputedStyle(img).width; if(w==='400px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use width:100% with max-width."
+      },
+      {
+        "level": 2,
+        "text": "Target #pic."
+      },
+      {
+        "level": 3,
+        "text": "#pic { width: 100%; max-width: 400px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "standard",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image Max-Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='wrap' style='width:500px'><img id='pic' src='x.jpg' alt='x'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#pic { width: 100%; max-width: 400px; height: auto; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "container-variant",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image Max-Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='wrap' style='width:380px'><img id='pic' src='x.jpg' alt='x'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#pic { width: 100%; max-width: 400px; height:auto; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-015",
+    "title": "Focus Input Highlight",
+    "description": "When the input is focused, show a blue border or outline.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Focus Input Highlight</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' type='text' value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Style :focus for #email */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Focus style is blue.",
+        "type": "dom",
+        "code": "const el=document.querySelector('#email'); el.focus(); const s=getComputedStyle(el); const p=[],f=[]; if(s.borderTopColor==='rgb(0, 0, 255)' || s.outlineColor==='rgb(0, 0, 255)'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use the :focus pseudo-class."
+      },
+      {
+        "level": 2,
+        "text": "Set border-color or outline."
+      },
+      {
+        "level": 3,
+        "text": "#email:focus { border-color: blue; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "border",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Focus Input Highlight</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' type='text' value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#email { border:1px solid #999; } #email:focus { border-color: blue; outline: none; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "outline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Focus Input Highlight</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' type='text' value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#email:focus { outline: 2px solid blue; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-016",
+    "title": "Disabled Button Style",
+    "description": "Style disabled buttons with a gray look.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Button Style</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn' disabled>Save</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Style disabled button */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Gray background or reduced opacity.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#btn')); const p=[],f=[]; if(s.backgroundColor==='rgb(204, 204, 204)' || s.opacity==='0.5'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use :disabled selector."
+      },
+      {
+        "level": 2,
+        "text": "Set background-color or opacity."
+      },
+      {
+        "level": 3,
+        "text": "button:disabled { background:#ccc; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "bg",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Button Style</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn' disabled>Save</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "button:disabled { background:#ccc; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "opacity",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Button Style</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn' disabled>Save</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "button:disabled { opacity: .5; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-017",
+    "title": "Bigger Checkboxes",
+    "description": "Make checkboxes 30px by 30px.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Bigger Checkboxes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='cb' type='checkbox'> Opt</label>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Enlarge checkbox */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Checkbox has 30x30 size.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#cb')); const p=[],f=[]; if(s.width==='30px' && s.height==='30px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Set width and height on input[type=checkbox]."
+      },
+      {
+        "level": 2,
+        "text": "You may need appearance:none for full control."
+      },
+      {
+        "level": 3,
+        "text": "#cb { width:30px; height:30px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "simple",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Bigger Checkboxes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='cb' type='checkbox'> Opt</label>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#cb { width:30px; height:30px; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "appearance",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Bigger Checkboxes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='cb' type='checkbox'> Opt</label>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#cb { appearance: none; width:30px; height:30px; border:2px solid #333; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-018",
+    "title": "Circular Avatar",
+    "description": "Make the avatar image perfectly circular.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Circular Avatar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='avatar' class='avatar' src='x.jpg' alt='avatar' width='100' height='100'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Make .avatar circular */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "border-radius 50%.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#avatar')); const p=[],f=[]; if(s.borderRadius==='50%'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use border-radius."
+      },
+      {
+        "level": 2,
+        "text": "50% makes circles."
+      },
+      {
+        "level": 3,
+        "text": ".avatar { border-radius:50%; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "class",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Circular Avatar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='avatar' class='avatar' src='x.jpg' alt='avatar' width='100' height='100'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".avatar { border-radius:50%; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Circular Avatar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='avatar' class='avatar' style='border-radius:50%' src='x.jpg' alt='avatar' width='100' height='100'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-019",
+    "title": "Card Shadow",
+    "description": "Add a shadow to the card element.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='card'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Add box-shadow */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "box-shadow is applied.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#card')); const p=[],f=[]; if(s.boxShadow && s.boxShadow!=='none' && s.boxShadow!==''){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use box-shadow."
+      },
+      {
+        "level": 2,
+        "text": "Any non-none value passes."
+      },
+      {
+        "level": 3,
+        "text": ".card { box-shadow: 0 2px 8px rgba(0,0,0,.2); }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "shadow",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='card'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".card { box-shadow: 0 2px 8px rgba(0,0,0,.2); }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "elevation",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='card'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".card { box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24); }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-020",
+    "title": "Add a Transition",
+    "description": "Add a non-zero-duration transition to the button.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Transition</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn2' class='btn'>Hover me</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Add transition to .btn */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Transition is defined.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#btn2')); const p=[],f=[]; if(s.transitionDuration!=='0s'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use transition property."
+      },
+      {
+        "level": 2,
+        "text": "Set duration like .2s."
+      },
+      {
+        "level": 3,
+        "text": ".btn { transition: transform .2s ease; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "transform",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Transition</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn2' class='btn'>Hover me</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".btn { transition: transform .2s ease; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "opacity",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Transition</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn2' class='btn'>Hover me</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".btn { transition: opacity .3s ease; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-021",
+    "title": "Two-Column Grid",
+    "description": "Create a two-column grid using 1fr 1fr.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid' class='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Make #grid a 2-col grid */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Grid with two equal columns.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#grid')); const p=[],f=[]; if(s.display==='grid' && s.gridTemplateColumns.replace(/\\s+/g,'')==='1fr1fr'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use display:grid."
+      },
+      {
+        "level": 2,
+        "text": "Set grid-template-columns: 1fr 1fr."
+      },
+      {
+        "level": 3,
+        "text": "#grid { display:grid; grid-template-columns: 1fr 1fr; gap: 0; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "grid",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid' class='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#grid { display:grid; grid-template-columns: 1fr 1fr; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "repeat",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid' class='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#grid { display:grid; grid-template-columns: repeat(2, 1fr); }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-022",
+    "title": "Flexbox Center Both Axes",
+    "description": "Use flexbox to center the inner box horizontally and vertically.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Flexbox Center Both Axes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='wrap2' style='height:200px'><div id='box2'>Hi</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Center with flexbox */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Container centers on both axes.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#wrap2')); const p=[],f=[]; if(s.display==='flex' && s.justifyContent==='center' && s.alignItems==='center'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "display:flex; justify-content:center; align-items:center."
+      },
+      {
+        "level": 2,
+        "text": "Target #wrap2."
+      },
+      {
+        "level": 3,
+        "text": "#wrap2 { display:flex; justify-content:center; align-items:center; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "flex",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Flexbox Center Both Axes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='wrap2' style='height:200px'><div id='box2'>Hi</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#wrap2 { display:flex; justify-content:center; align-items:center; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "grid",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Flexbox Center Both Axes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='wrap2' style='height:200px'><div id='box2'>Hi</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#wrap2 { display:grid; place-items:center; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-023",
+    "title": "Hide Element",
+    "description": "Hide the element with id 'hide-me'.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hide Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='hide-me'>You shouldn't see me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Hide #hide-me */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Element is hidden.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#hide-me')); const p=[],f=[]; if(s.display==='none' || s.visibility==='hidden'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use display:none or visibility:hidden."
+      },
+      {
+        "level": 2,
+        "text": "Target #hide-me."
+      },
+      {
+        "level": 3,
+        "text": "#hide-me { display:none; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "display",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hide Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='hide-me'>You shouldn't see me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hide-me { display:none; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "visibility",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hide Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='hide-me'>You shouldn't see me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hide-me { visibility:hidden; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-024",
+    "title": "Sticky Header",
+    "description": "Make the header stick to the top of the viewport.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1200px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Sticky header */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Header uses position:sticky; top:0.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#hdr')); const p=[],f=[]; if((s.position==='sticky'||s.position==='-webkit-sticky') && s.top==='0px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use position: sticky."
+      },
+      {
+        "level": 2,
+        "text": "Also set top: 0."
+      },
+      {
+        "level": 3,
+        "text": "#hdr { position: sticky; top: 0; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sticky",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1200px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hdr { position: sticky; top: 0; background:#fff; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "webkit",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1200px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hdr { position: -webkit-sticky; position: sticky; top:0; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-025",
+    "title": "Modal Overlay",
+    "description": "Ensure the modal overlays content using position and z-index.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Overlay</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='main' class='main'>Main</div><div id='modal' class='modal'>Modal</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Modal overlay */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Modal has fixed positioning and high z-index.",
+        "type": "dom",
+        "code": "const m=getComputedStyle(document.querySelector('#modal')); const p=[],f=[]; if(m.position==='fixed' && parseInt(m.zIndex)>=1000){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use position:fixed and a high z-index."
+      },
+      {
+        "level": 2,
+        "text": "1000 is a common overlay index."
+      },
+      {
+        "level": 3,
+        "text": "#modal { position:fixed; z-index:1000; top:0; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "fixed",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Overlay</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='main' class='main'>Main</div><div id='modal' class='modal'>Modal</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#modal { position: fixed; top:0; left:0; right:0; z-index:1000; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "absolute",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Overlay</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='main' class='main'>Main</div><div id='modal' class='modal'>Modal</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#modal { position: absolute; top:0; left:0; right:0; z-index:9999; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-026",
+    "title": "CSS Variable for Primary Color",
+    "description": "Define --primary in :root as #3498db and use it for the h1 color.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>CSS Variable for Primary Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Use CSS var */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "h1 color resolves to #3498db.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#t')); const p=[],f=[]; if(s.color==='rgb(52, 152, 219)'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Declare :root { --primary: #3498db; }"
+      },
+      {
+        "level": 2,
+        "text": "Use color: var(--primary)."
+      },
+      {
+        "level": 3,
+        "text": ":root{--primary:#3498db;} h1#t{color:var(--primary);}"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "var",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>CSS Variable for Primary Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ":root{--primary:#3498db;} h1#t{color:var(--primary);} \n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "fallback",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>CSS Variable for Primary Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ":root{--primary:#3498db;} h1#t{color:var(--primary, #3498db);} \n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-027",
+    "title": "nth-child Even Rows",
+    "description": "Style every even list item green using :nth-child(even).",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>nth-child Even Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>1</li><li>2</li><li>3</li><li>4</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Style even lis */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Second li is green.",
+        "type": "dom",
+        "code": "const li=document.querySelectorAll('#list li'); const p=[],f=[]; const s=getComputedStyle(li[1]); if(s.color==='rgb(0, 128, 0)'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use :nth-child(even)."
+      },
+      {
+        "level": 2,
+        "text": "Target #list li:nth-child(even)."
+      },
+      {
+        "level": 3,
+        "text": "#list li:nth-child(even){ color: green; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "even",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>nth-child Even Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>1</li><li>2</li><li>3</li><li>4</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#list li:nth-child(even){ color: green; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "odd-exclude",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>nth-child Even Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>1</li><li>2</li><li>3</li><li>4</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#list li{ color: inherit; } #list li:nth-child(2n){ color: green; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-028",
+    "title": "Uppercase Buttons",
+    "description": "Transform button text to uppercase.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='btn3'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Uppercase .btn */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "text-transform is uppercase.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#btn3')); const p=[],f=[]; if((s.textTransform||'').toLowerCase()==='uppercase'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use text-transform."
+      },
+      {
+        "level": 2,
+        "text": "Target .btn."
+      },
+      {
+        "level": 3,
+        "text": ".btn { text-transform: uppercase; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "stylesheet",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='btn3'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".btn { text-transform: uppercase; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "inline",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='btn3' style='text-transform:uppercase'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-029",
+    "title": "Comfortable Paragraphs",
+    "description": "Set paragraph line-height to 1.5.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Comfortable Paragraphs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='lp'>Lorem text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Set line-height */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "line-height roughly >= 1.5em.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#lp')); const p=[],f=[]; if(parseFloat(s.lineHeight)>=1.5*parseFloat(s.fontSize)-0.5){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use line-height."
+      },
+      {
+        "level": 2,
+        "text": "Relative unit is fine."
+      },
+      {
+        "level": 3,
+        "text": "#lp { line-height: 1.5; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "unitless",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Comfortable Paragraphs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='lp'>Lorem text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#lp { line-height: 1.5; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "em",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Comfortable Paragraphs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='lp'>Lorem text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#lp { line-height: 1.5em; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-030",
+    "title": "Rounded Buttons",
+    "description": "Give the button rounded corners (>=8px).",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Rounded button */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "border-radius is at least 8px.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#rbtn')); const p=[],f=[]; if(parseInt(s.borderRadius)>=8){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use border-radius."
+      },
+      {
+        "level": 2,
+        "text": "Any value >=8px passes."
+      },
+      {
+        "level": 3,
+        "text": "#rbtn { border-radius: 8px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "px",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rbtn { border-radius: 8px; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "percent",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rbtn { border-radius: 0.5rem; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-031",
+    "title": "Hero Background Image",
+    "description": "Set a background image 'hero.jpg' on the hero section.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hero Background Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <section id='hero'>Hero</section>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Background image */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "background-image references hero.jpg.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#hero')); const p=[],f=[]; if((s.backgroundImage||'').includes('hero.jpg')){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use background-image: url('hero.jpg')."
+      },
+      {
+        "level": 2,
+        "text": "Target #hero."
+      },
+      {
+        "level": 3,
+        "text": "#hero { background-image: url('hero.jpg'); }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "bg",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hero Background Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <section id='hero'>Hero</section>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hero { background-image: url('hero.jpg'); }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "shorthand",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hero Background Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <section id='hero'>Hero</section>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hero { background: url('hero.jpg') center/cover no-repeat; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-032",
+    "title": "Letter Spacing",
+    "description": "Set letter-spacing of the h2 to 2px.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Letter spacing */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "letter-spacing is 2px.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#h2')); const p=[],f=[]; if(s.letterSpacing==='2px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use letter-spacing."
+      },
+      {
+        "level": 2,
+        "text": "Target #h2."
+      },
+      {
+        "level": 3,
+        "text": "#h2 { letter-spacing: 2px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "px",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#h2 { letter-spacing: 2px; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "em",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#h2 { letter-spacing: 0.125em; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-033",
+    "title": "Text Shadow",
+    "description": "Apply any non-none text-shadow to the h3.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Text shadow */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "text-shadow applied.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#ts')); const p=[],f=[]; if((s.textShadow||'')!=='none' && s.textShadow!==''){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use text-shadow."
+      },
+      {
+        "level": 2,
+        "text": "Any non-none value passes."
+      },
+      {
+        "level": 3,
+        "text": "#ts { text-shadow: 1px 1px 2px rgba(0,0,0,.3); }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "shadow",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#ts { text-shadow: 1px 1px 2px rgba(0,0,0,.3); }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "glow",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#ts { text-shadow: 0 0 6px rgba(0,0,0,.5); }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-034",
+    "title": "Border-Box Sizing",
+    "description": "Set box-sizing to border-box for the element.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Border-Box Sizing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='bb'>Box</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* box-sizing */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "box-sizing is border-box.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#bb')); const p=[],f=[]; if(s.boxSizing==='border-box'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use box-sizing property."
+      },
+      {
+        "level": 2,
+        "text": "Target #bb."
+      },
+      {
+        "level": 3,
+        "text": "#bb { box-sizing: border-box; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "single",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Border-Box Sizing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='bb'>Box</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#bb { box-sizing: border-box; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "global",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Border-Box Sizing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='bb'>Box</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "*, *::before, *::after { box-sizing: border-box; }\n#bb { padding:10px; border:5px solid #000; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-035",
+    "title": "Constrain Container Width",
+    "description": "Limit the container's max-width to 800px.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Constrain Container Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='container'>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* max-width */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "max-width is 800px.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#container')); const p=[],f=[]; if(s.maxWidth==='800px'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use max-width."
+      },
+      {
+        "level": 2,
+        "text": "Target #container."
+      },
+      {
+        "level": 3,
+        "text": "#container { max-width: 800px; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "maxw",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Constrain Container Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='container'>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#container { max-width: 800px; margin: 0 auto; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "clamp",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Constrain Container Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='container'>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#container { width: min(100%, 800px); margin: 0 auto; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-036",
+    "title": "Scrollable Box",
+    "description": "Make the box scroll vertically.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Scrollable Box</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='scroll' style='height:100px'>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Scrollable */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "overflow-y set to scroll.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#scroll')); const p=[],f=[]; if(s.overflowY==='scroll' || s.overflow==='scroll'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use overflow-y: scroll."
+      },
+      {
+        "level": 2,
+        "text": "Target #scroll."
+      },
+      {
+        "level": 3,
+        "text": "#scroll { overflow-y: scroll; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "y",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Scrollable Box</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='scroll' style='height:100px'>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#scroll { overflow-y: scroll; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "both",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Scrollable Box</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='scroll' style='height:100px'>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#scroll { overflow: auto; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-037",
+    "title": "Zebra Table Rows",
+    "description": "Give even table rows a light gray background (#f0f0f0).",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Zebra rows */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Even row has #f0f0f0 background.",
+        "type": "dom",
+        "code": "const row=document.querySelectorAll('#tb tr')[1]; const s=getComputedStyle(row); const p=[],f=[]; if(s.backgroundColor==='rgb(240, 240, 240)'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use tr:nth-child(even)."
+      },
+      {
+        "level": 2,
+        "text": "Target #tb tr:nth-child(even)."
+      },
+      {
+        "level": 3,
+        "text": "#tb tr:nth-child(even){ background:#f0f0f0; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "nth",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#tb tr:nth-child(even){ background:#f0f0f0; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "odd-alt",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#tb tr:nth-child(2n){ background:#f0f0f0; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-038",
+    "title": "Disabled Inputs Look Dim",
+    "description": "Dim disabled inputs using opacity 0.5.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Inputs Look Dim</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='di' disabled value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Dim disabled inputs */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "opacity is 0.5 on disabled input.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#di')); const p=[],f=[]; if(s.opacity==='0.5'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use :disabled selector."
+      },
+      {
+        "level": 2,
+        "text": "Set opacity to 0.5."
+      },
+      {
+        "level": 3,
+        "text": "input:disabled { opacity: .5; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "opacity",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Inputs Look Dim</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='di' disabled value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "input:disabled { opacity: .5; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "bg",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Inputs Look Dim</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='di' disabled value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "input:disabled { background:#eee; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-039",
+    "title": "Rotate Element",
+    "description": "Rotate the element by any angle using transform.",
+    "difficulty": 2,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Rotate #rot */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Transform is not none.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#rot')); const p=[],f=[]; if((s.transform||'none')!=='none'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use transform: rotate(...)."
+      },
+      {
+        "level": 2,
+        "text": "Any angle passes."
+      },
+      {
+        "level": 3,
+        "text": "#rot { transform: rotate(15deg); }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "deg",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rot { display:inline-block; transform: rotate(15deg); }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "rad",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rot { display:inline-block; transform: rotate(0.2rad); }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "css-040",
+    "title": "Dotted Separator",
+    "description": "Make the horizontal rule a dotted line.",
+    "difficulty": 1,
+    "category": "css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dotted Separator</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <hr id='sep'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Dotted rule */\n",
+      "script.js": "// No JS\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "border-top-style dotted on hr.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#sep')); const p=[],f=[]; if(s.borderTopStyle==='dotted'){p.push('a01')}else{f.push('a01')} return {passedIds:p, failedIds:f, passed:f.length===0};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Style the hr border."
+      },
+      {
+        "level": 2,
+        "text": "Use dotted border-top."
+      },
+      {
+        "level": 3,
+        "text": "#sep { border-top: 2px dotted #333; }"
+      }
+    ],
+    "solutions": [
+      {
+        "id": "border-top",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dotted Separator</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <hr id='sep'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#sep { border: 0; border-top: 2px dotted #333; }\n",
+          "script.js": "// Not used\n"
+        }
+      },
+      {
+        "id": "border",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dotted Separator</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <hr id='sep'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#sep { border: 2px dotted #333; border-left:0; border-right:0; border-bottom:0; }\n",
+          "script.js": "// Not used\n"
+        }
+      }
+    ]
+  }
+]

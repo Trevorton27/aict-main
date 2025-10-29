@@ -1,0 +1,2122 @@
+[
+  {
+    "id": "web-001",
+    "title": "Change Heading Text",
+    "description": "Click button to change h1 text to 'Updated'.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Heading Text</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='title'>Original</h1><button id='btn'>Change</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* style */\n",
+      "script.js": "// Add click handler to change h1 text\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Click button to change h1 text to 'Updated'.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const btn=document.querySelector('#btn'); btn.click(); if(document.querySelector('#title').textContent==='Updated') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use document.querySelector."
+      },
+      {
+        "level": 2,
+        "text": "AddEventListener on #btn."
+      },
+      {
+        "level": 3,
+        "text": "Set textContent of #title."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Heading Text</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='title'>Original</h1><button id='btn'>Change</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.querySelector('#btn').addEventListener('click',()=>{ document.querySelector('#title').textContent='Updated'; });"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Heading Text</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='title'>Original</h1><button id='btn'>Change</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const btn=document.getElementById('btn'); const h=document.getElementById('title'); btn.onclick=()=>h.innerText='Updated';"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-002",
+    "title": "Dark Mode Toggle",
+    "description": "Toggle 'dark' class on body when switch clicked.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dark Mode Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='toggle'>Toggle</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "body.dark { background:#111; color:#eee; }\n",
+      "script.js": "// Toggle dark class on body\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Toggle 'dark' class on body when switch clicked.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const btn=document.querySelector('#toggle'); btn.click(); if(document.body.classList.contains('dark')) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use classList.toggle."
+      },
+      {
+        "level": 2,
+        "text": "Target document.body."
+      },
+      {
+        "level": 3,
+        "text": "Bind click event."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dark Mode Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='toggle'>Toggle</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "body.dark{background:#111;color:#eee;}\n",
+          "script.js": "document.querySelector('#toggle').addEventListener('click',()=>document.body.classList.toggle('dark'));"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dark Mode Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='toggle'>Toggle</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "body.dark{background:#111;color:#eee;}\n",
+          "script.js": "document.getElementById('toggle').onclick=()=>document.body.className+=(document.body.className.includes('dark')?'':' dark');"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-003",
+    "title": "Add List Item",
+    "description": "Click 'Add' to append <li>New</li> to #list.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add List Item</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>Old</li></ul><button id='add'>Add</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Append an li to #list on click\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Click 'Add' to append <li>New</li> to #list.",
+        "type": "dom",
+        "code": "const p=[],f=[]; document.querySelector('#add').click(); const items=[...document.querySelectorAll('#list li')]; if(items.length===2 && items[1].textContent==='New') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use createElement('li')."
+      },
+      {
+        "level": 2,
+        "text": "Set textContent."
+      },
+      {
+        "level": 3,
+        "text": "appendChild to #list."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add List Item</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>Old</li></ul><button id='add'>Add</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.getElementById('add').addEventListener('click',()=>{ const li=document.createElement('li'); li.textContent='New'; document.getElementById('list').appendChild(li); });"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add List Item</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>Old</li></ul><button id='add'>Add</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const btn=document.getElementById('add'); btn.onclick=()=>{ document.querySelector('#list').insertAdjacentHTML('beforeend','<li>New</li>'); };"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-004",
+    "title": "Card Shadow",
+    "description": "Apply a non-none box-shadow to .card.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='c'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Add box-shadow to .card */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Apply a non-none box-shadow to .card.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#c')); const p=[],f=[]; if((s.boxShadow||'')!=='none' && s.boxShadow!=='') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use box-shadow."
+      },
+      {
+        "level": 2,
+        "text": "Any non-none value passes."
+      },
+      {
+        "level": 3,
+        "text": "Target .card."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='c'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".card{ box-shadow: 0 2px 8px rgba(0,0,0,.2); }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='c'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".card{ box-shadow: 0 1px 3px rgba(0,0,0,.12), 0 1px 2px rgba(0,0,0,.24); }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-005",
+    "title": "Filter List by Query",
+    "description": "Implement filter(items, q) returning filtered array, and render matching li only.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Filter List by Query</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='ap'><ul id='list'><li>apple</li><li>pear</li><li>grape</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Implement filter and then read #q and hide non-matching lis\nfunction filter(items, q){ /* TODO: return array containing items that include q (case-insensitive) */ }\nconst q=document.getElementById('q').value.toLowerCase(); document.querySelectorAll('#list li').forEach(li=>{ /* TODO: use filter or includes to hide/show */ });\nwindow.filter = filter;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement filter(items, q) returning filtered array, and render matching li only.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const lis=[...document.querySelectorAll('#list li')]; const hidden=lis.filter(li=>getComputedStyle(li).display==='none').map(li=>li.textContent); if(hidden.length===1 && hidden[0]==='pear') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Write a pure filter(items,q)."
+      },
+      {
+        "level": 2,
+        "text": "Case-insensitive includes."
+      },
+      {
+        "level": 3,
+        "text": "Use function result to decide visibility."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Filter List by Query</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='ap'><ul id='list'><li>apple</li><li>pear</li><li>grape</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function filter(items,q){ q=q.toLowerCase(); return items.filter(x=>x.toLowerCase().includes(q)); }\nconst q=document.getElementById('q').value.toLowerCase(); document.querySelectorAll('#list li').forEach(li=>{ li.style.display = li.textContent.toLowerCase().includes(q) ? '' : 'none'; });\nwindow.filter = filter;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Filter List by Query</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='ap'><ul id='list'><li>apple</li><li>pear</li><li>grape</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function filter(items,q){ q=q.toLowerCase(); const out=[]; for(const x of items){ if(x.toLowerCase().includes(q)) out.push(x); } return out; }\nconst q=document.getElementById('q').value.toLowerCase(); for(const li of document.querySelectorAll('#list li')) li.hidden = !li.textContent.toLowerCase().includes(q);\nwindow.filter = filter;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-006",
+    "title": "Simple Tabs",
+    "description": "Clicking a tab shows its panel and hides the other.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Simple Tabs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='tab' data-for='a'>A</button><button class='tab' data-for='b'>B</button><div id='a'>A</div><div id='b'>B</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "#a,#b{display:none} #a.active,#b.active{display:block}\n",
+      "script.js": "// Implement tabs\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Clicking a tab shows its panel and hides the other.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const btn=[...document.querySelectorAll('.tab')][1]; btn.click(); const a=getComputedStyle(document.querySelector('#a')).display; const b=getComputedStyle(document.querySelector('#b')).display; if(a==='none' && b!=='none') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Add click listeners to .tab."
+      },
+      {
+        "level": 2,
+        "text": "Remove active from all panels."
+      },
+      {
+        "level": 3,
+        "text": "Add active to target panel."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Simple Tabs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='tab' data-for='a'>A</button><button class='tab' data-for='b'>B</button><div id='a'>A</div><div id='b'>B</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#a,#b{display:none} #a.active,#b.active{display:block}\n",
+          "script.js": "document.querySelectorAll('.tab').forEach(t=>t.addEventListener('click',()=>{ const id=t.dataset.for; document.querySelectorAll('#a,#b').forEach(p=>p.classList.remove('active')); document.getElementById(id).classList.add('active'); }));"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Simple Tabs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='tab' data-for='a'>A</button><button class='tab' data-for='b'>B</button><div id='a'>A</div><div id='b'>B</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#a,#b{display:none} #a.active,#b.active{display:block}\n",
+          "script.js": "const tabs=document.getElementsByClassName('tab'); for(const t of tabs){ t.onclick=()=>{ document.getElementById('a').className=''; document.getElementById('b').className=''; document.getElementById(t.getAttribute('data-for')).className='active'; }; }"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-007",
+    "title": "Sticky Header",
+    "description": "Make header stick to top using position:sticky.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1000px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* Sticky header */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Make header stick to top using position:sticky.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#hdr')); const p=[],f=[]; if((s.position==='sticky'||s.position==='-webkit-sticky') && s.top==='0px') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use position: sticky."
+      },
+      {
+        "level": 2,
+        "text": "Also set top: 0."
+      },
+      {
+        "level": 3,
+        "text": "Vendor prefix optional."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1000px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hdr{ position: sticky; top:0; background:#fff; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1000px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#hdr{ position: -webkit-sticky; position: sticky; top:0; }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-008",
+    "title": "Email Validation",
+    "description": "Implement isEmail(s) and add 'error' class if invalid on blur.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Email Validation</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' value='notanemail'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "#email.error{ outline:2px solid red }\n",
+      "script.js": "// Implement isEmail and attach blur handler\nfunction isEmail(s){ /* TODO: basic check: contains '@' and '.' after it */ }\nconst el=document.getElementById('email'); el.addEventListener('blur',()=>{ if(!isEmail(el.value)) el.classList.add('error'); });\nwindow.isEmail = isEmail;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement isEmail(s) and add 'error' class if invalid on blur.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const el=document.querySelector('#email'); el.dispatchEvent(new Event('blur')); if(el.classList.contains('error')) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Keep the function pure."
+      },
+      {
+        "level": 2,
+        "text": "Use minimal heuristics."
+      },
+      {
+        "level": 3,
+        "text": "Toggle class based on result."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Email Validation</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' value='notanemail'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#email.error{ outline:2px solid red }\n",
+          "script.js": "function isEmail(s){ const i=s.indexOf('@'); if(i<=0) return false; return s.slice(i+1).includes('.'); }\nconst el=document.getElementById('email'); el.addEventListener('blur',()=>{ if(!isEmail(el.value)) el.classList.add('error'); });\nwindow.isEmail = isEmail;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Email Validation</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' value='notanemail'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#email.error{ outline:2px solid red }\n",
+          "script.js": "function isEmail(s){ return /.+@.+\\..+/.test(s); }\nconst el=document.getElementById('email'); el.onblur=()=>{ if(!isEmail(el.value)) el.className+=' error'; };\nwindow.isEmail = isEmail;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-009",
+    "title": "Sort Table Asc",
+    "description": "Implement compare(a,b) numeric and sort table rows by first cell.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sort Table Asc</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='t'><tbody><tr><td>3</td></tr><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Implement compare and use it to sort\nfunction compare(a,b){ /* return negative/zero/positive like a-b */ }\nconst tb=document.querySelector('#t tbody'); const rows=[...tb.querySelectorAll('tr')]; rows.sort((r1,r2)=>compare(+r1.cells[0].textContent, +r2.cells[0].textContent)); rows.forEach(r=>tb.appendChild(r));\nwindow.compare = compare;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement compare(a,b) numeric and sort table rows by first cell.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const rows=[...document.querySelectorAll('#t tr')]; const order=rows.map(r=>r.cells[0].textContent).join(','); if(order==='1,2,3') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Write a simple subtract function."
+      },
+      {
+        "level": 2,
+        "text": "Use Array.sort with comparator."
+      },
+      {
+        "level": 3,
+        "text": "Append rows back to DOM."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sort Table Asc</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='t'><tbody><tr><td>3</td></tr><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function compare(a,b){ return a-b; }\nconst tb=document.querySelector('#t tbody'); const rows=[...tb.querySelectorAll('tr')]; rows.sort((r1,r2)=>compare(+r1.cells[0].textContent, +r2.cells[0].textContent)); rows.forEach(r=>tb.appendChild(r));\nwindow.compare = compare;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sort Table Asc</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='t'><tbody><tr><td>3</td></tr><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function compare(a,b){ if(a<b) return -1; if(a>b) return 1; return 0; }\nconst tb=document.getElementById('t').tBodies[0]; const rows=Array.from(tb.rows); rows.sort((a,b)=>+a.cells[0].innerText-+b.cells[0].innerText); for(const r of rows) tb.appendChild(r);\nwindow.compare = compare;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-010",
+    "title": "Responsive Image",
+    "description": "Make #pic width:100% with max-width 400px.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div style='width:500px'><img id='pic' src='x.jpg'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* responsive */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Make #pic width:100% with max-width 400px.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#pic')); const p=[],f=[]; if(s.maxWidth==='400px' and s.width in ['500px','auto','']) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use width:100%."
+      },
+      {
+        "level": 2,
+        "text": "Add max-width:400px."
+      },
+      {
+        "level": 3,
+        "text": "Keep height:auto."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div style='width:500px'><img id='pic' src='x.jpg'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#pic{ width:100%; max-width:400px; height:auto; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div style='width:500px'><img id='pic' src='x.jpg'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "img#pic{ max-width:400px; width:100%; }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-011",
+    "title": "Debounce Search",
+    "description": "Implement debounce(fn,delay) and call once after rapid invocations.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Debounce Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='x'><p id='hits'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Implement debounce and demonstrate\nfunction debounce(fn, delay){ /* TODO */ }\nconst out=document.getElementById('hits'); const inc=()=>{ out.textContent=String(+out.textContent+1); };\nconst d=debounce(inc, 0); d(); d(); d(); setTimeout(()=>d(),0);\nwindow.debounce = debounce;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement debounce(fn,delay) and call once after rapid invocations.",
+        "type": "dom",
+        "code": "const p=[],f=[]; return new Promise(res=>setTimeout(()=>{ if(document.getElementById('hits').textContent==='2') res({passedIds:['a1'], failedIds:[], passed:true}); else res({passedIds:[], failedIds:['a1'], passed:false}); },5));"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Clear timeout before setting a new one."
+      },
+      {
+        "level": 2,
+        "text": "Call fn when idle."
+      },
+      {
+        "level": 3,
+        "text": "Return the debounced wrapper."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Debounce Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='x'><p id='hits'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function debounce(fn,delay){ let t; return (...a)=>{ clearTimeout(t); t=setTimeout(()=>fn(...a), delay); }; }\nconst out=document.getElementById('hits'); const inc=()=>{ out.textContent=String(+out.textContent+1); }; const d=debounce(inc,0); d(); d(); d(); setTimeout(()=>d(),0);\nwindow.debounce = debounce;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Debounce Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='x'><p id='hits'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function debounce(fn,delay){ let id=null; return function(){ if(id) clearTimeout(id); id=setTimeout(fn, delay); }; }\nconst out=document.getElementById('hits'); const inc=()=>{ out.textContent=String(+out.textContent+1); }; const d=debounce(inc,0); d(); d(); d(); setTimeout(()=>d(),0);\nwindow.debounce = debounce;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-012",
+    "title": "Throttle Function",
+    "description": "Implement throttle(fn,delay) so fn runs at most once per window.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Throttle Function</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='n'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Implement throttle then simulate rapid calls\nfunction throttle(fn, delay){ /* TODO */ }\nconst out=document.getElementById('n'); const inc=()=>out.textContent=String(+out.textContent+1);\nconst t=throttle(inc, 0);\nt(); t(); t(); setTimeout(t,0);\nwindow.throttle = throttle;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement throttle(fn,delay) so fn runs at most once per window.",
+        "type": "dom",
+        "code": "const p=[],f=[]; return new Promise(res=>setTimeout(()=>{ const v=document.getElementById('n').textContent; if(v==='2') res({passedIds:['a1'], failedIds:[], passed:true}); else res({passedIds:[], failedIds:['a1'], passed:false}); },5));"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Track last run time or lock with a flag."
+      },
+      {
+        "level": 2,
+        "text": "Ignore calls inside window."
+      },
+      {
+        "level": 3,
+        "text": "Call again after window resets."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Throttle Function</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='n'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function throttle(fn,delay){ let ready=true; return (...a)=>{ if(!ready) return; ready=false; fn(...a); setTimeout(()=>ready=true, delay); }; }\nconst out=document.getElementById('n'); const inc=()=>out.textContent=String(+out.textContent+1); const t=throttle(inc,0); t(); t(); t(); setTimeout(t,0);\nwindow.throttle = throttle;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Throttle Function</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='n'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function throttle(fn,delay){ let last=0; return (...a)=>{ const now=Date.now(); if(now-last>=delay){ last=now; fn(...a); } }; }\nconst out=document.getElementById('n'); const inc=()=>out.textContent=String(+out.textContent+1); const t=throttle(inc,0); t(); t(); t(); setTimeout(t,0);\nwindow.throttle = throttle;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-013",
+    "title": "Modal Open/Close",
+    "description": "Open modal by adding 'open' class; close removes it.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Open/Close</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='open'>Open</button><div id='modal' class='modal'><button id='close'>X</button></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": ".modal{display:none} .modal.open{display:block}\n",
+      "script.js": "// Wire up open/close\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Open modal by adding 'open' class; close removes it.",
+        "type": "dom",
+        "code": "const p=[],f=[]; document.querySelector('#open').click(); if(!document.querySelector('#modal').classList.contains('open')) f.push('a1'); document.querySelector('#close').click(); if(document.querySelector('#modal').classList.contains('open')) f.push('a2'); return {passedIds: f.length?[]:['a1','a2'], failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Add click listeners."
+      },
+      {
+        "level": 2,
+        "text": "classList.add/remove."
+      },
+      {
+        "level": 3,
+        "text": "CSS controls visibility."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Open/Close</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='open'>Open</button><div id='modal' class='modal'><button id='close'>X</button></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".modal{display:none} .modal.open{display:block}\n",
+          "script.js": "document.getElementById('open').onclick=()=>document.getElementById('modal').classList.add('open'); document.getElementById('close').onclick=()=>document.getElementById('modal').classList.remove('open');"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Open/Close</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='open'>Open</button><div id='modal' class='modal'><button id='close'>X</button></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".modal{display:none} .modal.open{display:block}\n",
+          "script.js": "const m=document.getElementById('modal'); document.getElementById('open').addEventListener('click',()=>m.className='modal open'); document.getElementById('close').addEventListener('click',()=>m.className='modal');"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-014",
+    "title": "Two-Column Grid",
+    "description": "Use CSS Grid with two equal columns.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* grid */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Use CSS Grid with two equal columns.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#grid')); const p=[],f=[]; if(s.display==='grid' && s.gridTemplateColumns.replace(/\\s+/g,'')==='1fr1fr') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "display: grid."
+      },
+      {
+        "level": 2,
+        "text": "grid-template-columns: 1fr 1fr."
+      },
+      {
+        "level": 3,
+        "text": "gap optional."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#grid{ display:grid; grid-template-columns:1fr 1fr; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#grid{ display:grid; grid-template-columns:repeat(2,1fr); }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-015",
+    "title": "Theme Variable Toggle",
+    "description": "Define --primary on :root and toggle value via JS.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Theme Variable Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": ":root{ --primary: #3498db; } #t{ color: var(--primary); }\n",
+      "script.js": "// Implement togglePrimary to switch primary between #3498db and #e74c3c and apply it\nfunction togglePrimary(){ /* TODO */ }\n// call once\n\nwindow.togglePrimary = togglePrimary;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Define --primary on :root and toggle value via JS.",
+        "type": "dom",
+        "code": "const p=[],f=[]; window.togglePrimary(); const c=getComputedStyle(document.documentElement).getPropertyValue('--primary').trim(); if(c==='#e74c3c') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use document.documentElement.style.setProperty."
+      },
+      {
+        "level": 2,
+        "text": "Read current value."
+      },
+      {
+        "level": 3,
+        "text": "Switch to the other hex."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Theme Variable Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ":root{ --primary: #3498db; } #t{ color: var(--primary); }\n",
+          "script.js": "function togglePrimary(){ const root=document.documentElement; const cur=getComputedStyle(root).getPropertyValue('--primary').trim(); root.style.setProperty('--primary', cur==='#3498db'?'#e74c3c':'#3498db'); }\n\nwindow.togglePrimary = togglePrimary;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Theme Variable Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ":root{ --primary: #3498db; } #t{ color: var(--primary); }\n",
+          "script.js": "function togglePrimary(){ const root=document.documentElement; const cur=root.style.getPropertyValue('--primary')||getComputedStyle(root).getPropertyValue('--primary'); root.style.setProperty('--primary', (cur.trim()==='#3498db')?'#e74c3c':'#3498db'); }\n\nwindow.togglePrimary = togglePrimary;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-016",
+    "title": "Uppercase Buttons",
+    "description": "Make .btn text uppercase.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='b'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* uppercase */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Make .btn text uppercase.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#b')); const p=[],f=[]; if((s.textTransform||'').toLowerCase()==='uppercase') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use text-transform."
+      },
+      {
+        "level": 2,
+        "text": "Target .btn."
+      },
+      {
+        "level": 3,
+        "text": "Inline or stylesheet."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='b'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".btn{ text-transform: uppercase; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='b'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#b{ text-transform: uppercase; }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-017",
+    "title": "Counter with Step",
+    "description": "Implement parseStep(btn) and increment #n by step from data-step.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Counter with Step</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='inc' data-step='3'>+</button> <span id='n'>0</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Implement parseStep and hook up click\nfunction parseStep(btn){ /* parseInt(btn.dataset.step||'1',10) */ }\ndocument.getElementById('inc').addEventListener('click',()=>{ const step=parseStep(document.getElementById('inc')); const n=document.getElementById('n'); n.textContent=String(+n.textContent + step); });\n// simulate\ndocument.getElementById('inc').click();\nwindow.parseStep = parseStep;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement parseStep(btn) and increment #n by step from data-step.",
+        "type": "dom",
+        "code": "const p=[],f=[]; if(document.getElementById('n').textContent==='3') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Access dataset.step."
+      },
+      {
+        "level": 2,
+        "text": "Convert to number."
+      },
+      {
+        "level": 3,
+        "text": "Update textContent."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Counter with Step</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='inc' data-step='3'>+</button> <span id='n'>0</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function parseStep(btn){ return parseInt(btn.dataset.step||'1',10); }\ndocument.getElementById('inc').onclick=()=>{ const step=parseStep(inc); const n=document.getElementById('n'); n.textContent=String(+n.textContent+step); }; document.getElementById('inc').click();\nwindow.parseStep = parseStep;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Counter with Step</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='inc' data-step='3'>+</button> <span id='n'>0</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function parseStep(btn){ return Number(btn.getAttribute('data-step')||1); }\ndocument.getElementById('inc').dispatchEvent(new Event('click'));\nwindow.parseStep = parseStep;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-018",
+    "title": "Remove Element",
+    "description": "Remove #ad from the page.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='ad'>Ad</div><div>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Remove #ad\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Remove #ad from the page.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const el=document.querySelector('#ad'); if(el) el.remove(); if(!document.querySelector('#ad')) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use element.remove()."
+      },
+      {
+        "level": 2,
+        "text": "Or parent.removeChild."
+      },
+      {
+        "level": 3,
+        "text": "Ensure #ad is gone."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='ad'>Ad</div><div>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.getElementById('ad').remove();"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='ad'>Ad</div><div>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const el=document.getElementById('ad'); el.parentNode.removeChild(el);"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-019",
+    "title": "Select All",
+    "description": "Master checkbox toggles all .item checkboxes.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Select All</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='all' type='checkbox'></label><div><label><input class='item' type='checkbox'></label><label><input class='item' type='checkbox'></label></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Implement select-all\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Master checkbox toggles all .item checkboxes.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const all=document.querySelector('#all'); const items=[...document.querySelectorAll('.item')]; all.checked=true; all.dispatchEvent(new Event('change')); if(items.every(i=>i.checked)) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Listen for change on #all."
+      },
+      {
+        "level": 2,
+        "text": "Set each .item.checked."
+      },
+      {
+        "level": 3,
+        "text": "Query by class."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Select All</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='all' type='checkbox'></label><div><label><input class='item' type='checkbox'></label><label><input class='item' type='checkbox'></label></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.getElementById('all').addEventListener('change',e=>{ document.querySelectorAll('.item').forEach(i=>i.checked=e.target.checked); });"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Select All</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='all' type='checkbox'></label><div><label><input class='item' type='checkbox'></label><label><input class='item' type='checkbox'></label></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const all=document.getElementById('all'); all.onchange=()=>{ for(const i of document.getElementsByClassName('item')) i.checked=all.checked; };"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-020",
+    "title": "Word Count",
+    "description": "Implement countWords(s) and display count in #out on input.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Word Count</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <textarea id='txt'>one two  three</textarea><p id='out'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// pure function + handler\nfunction countWords(s){ /* split on whitespace, ignore empties */ }\nconst el=document.getElementById('txt'); const out=document.getElementById('out'); out.textContent=String(countWords(el.value));\nwindow.countWords = countWords;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement countWords(s) and display count in #out on input.",
+        "type": "dom",
+        "code": "const p=[],f=[]; if(document.getElementById('out').textContent==='3') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use s.trim().split(/\\s+/)."
+      },
+      {
+        "level": 2,
+        "text": "Filter empties."
+      },
+      {
+        "level": 3,
+        "text": "Return length."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Word Count</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <textarea id='txt'>one two  three</textarea><p id='out'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function countWords(s){ s=s.trim(); if(!s) return 0; return s.split(/\\s+/).length; }\nconst el=document.getElementById('txt'); const out=document.getElementById('out'); out.textContent=String(countWords(el.value));\nwindow.countWords = countWords;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Word Count</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <textarea id='txt'>one two  three</textarea><p id='out'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function countWords(s){ return (s.trim().match(/\\S+/g)||[]).length; }\nconst el=document.getElementById('txt'); const out=document.getElementById('out'); out.textContent=String(countWords(el.value));\nwindow.countWords = countWords;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-021",
+    "title": "Highlight Search",
+    "description": "Wrap matches of 'lo' in <mark> inside #p.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Highlight Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p'>lorem ipsum dolor</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "mark{ background: yellow; }\n",
+      "script.js": "// Replace innerHTML with marked matches 'lo'\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Wrap matches of 'lo' in <mark> inside #p.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const el=document.querySelector('#p'); el.innerHTML=el.textContent.replace(/lo/g,'<mark>lo</mark>'); const count=(el.innerHTML.match(/<mark>/g)||[]).length; if(count>=2) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use textContent then replace."
+      },
+      {
+        "level": 2,
+        "text": "Use regex with global flag."
+      },
+      {
+        "level": 3,
+        "text": "Set innerHTML back."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Highlight Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p'>lorem ipsum dolor</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "mark{ background: yellow; }\n",
+          "script.js": "const el=document.getElementById('p'); el.innerHTML=el.textContent.replace(/lo/g,'<mark>lo</mark>');"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Highlight Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p'>lorem ipsum dolor</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "mark{ background: yellow; }\n",
+          "script.js": "const txt=document.getElementById('p').textContent; document.getElementById('p').innerHTML=txt.split('lo').join('<mark>lo</mark>');"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-022",
+    "title": "Copy to Clipboard",
+    "description": "Implement copy(text) using Clipboard API (fallback to window.__clipboard__).",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Copy to Clipboard</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='src' value='secret'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "async function copy(text){ /* if navigator.clipboard use writeText, else set window.__clipboard__=text and return true */ }\nconst v=document.getElementById('src').value; copy(v);\nwindow.copy = copy;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement copy(text) using Clipboard API (fallback to window.__clipboard__).",
+        "type": "dom",
+        "code": "const p=[],f=[]; setTimeout(()=>{},0); const ok=(navigator.clipboard&&navigator.clipboard.writeText) || window.__clipboard__==='secret'; if(ok) {return {passedIds:['a1'], failedIds:[], passed:true}} else {return {passedIds:[], failedIds:['a1'], passed:false}}"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "navigator.clipboard.writeText returns a Promise."
+      },
+      {
+        "level": 2,
+        "text": "Fallback sets a global."
+      },
+      {
+        "level": 3,
+        "text": "Always resolve."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Copy to Clipboard</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='src' value='secret'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "async function copy(text){ if(navigator.clipboard&&navigator.clipboard.writeText){ await navigator.clipboard.writeText(text); return true; } window.__clipboard__=text; return true; }\nconst v=document.getElementById('src').value; copy(v);\nwindow.copy = copy;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Copy to Clipboard</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='src' value='secret'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "async function copy(text){ try{ await navigator.clipboard.writeText(text); }catch(e){ window.__clipboard__=text; } }\nconst v=document.getElementById('src').value; copy(v);\nwindow.copy = copy;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-023",
+    "title": "Accordion",
+    "description": "Click header toggles panel visibility.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Accordion</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='acc' id='h'>Header</button><div id='panel'>Text</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "#panel{display:none} #panel.open{display:block}\n",
+      "script.js": "// Toggle open class\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Click header toggles panel visibility.",
+        "type": "dom",
+        "code": "const p=[],f=[]; document.querySelector('#h').click(); if(getComputedStyle(document.querySelector('#panel')).display!=='none') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Add click listener."
+      },
+      {
+        "level": 2,
+        "text": "Toggle class on #panel."
+      },
+      {
+        "level": 3,
+        "text": "Display controlled by CSS."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Accordion</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='acc' id='h'>Header</button><div id='panel'>Text</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#panel{display:none} #panel.open{display:block}\n",
+          "script.js": "const p=document.getElementById('panel'); document.getElementById('h').onclick=()=>p.classList.toggle('open');"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Accordion</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='acc' id='h'>Header</button><div id='panel'>Text</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#panel{display:none} #panel.open{display:block}\n",
+          "script.js": "document.getElementById('h').addEventListener('click',()=>{ const p=document.getElementById('panel'); p.className = p.className==='open'?'':'open'; });"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-024",
+    "title": "Tooltip via CSS",
+    "description": "Show span.tooltip when parent is hovered.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Tooltip via CSS</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='has-tip' id='wrap'>Hover me<span class='tooltip'>Hi</span></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": ".tooltip{ display:none } .has-tip:hover .tooltip{ display:inline }\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Show span.tooltip when parent is hovered.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const wrap=document.querySelector('#wrap'); wrap.dispatchEvent(new Event('mouseover')); const s=getComputedStyle(wrap.querySelector('.tooltip')); if(s.display!=='none') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Place tooltip as child."
+      },
+      {
+        "level": 2,
+        "text": "Use :hover descendant selector."
+      },
+      {
+        "level": 3,
+        "text": "Display inline/block."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Tooltip via CSS</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='has-tip' id='wrap'>Hover me<span class='tooltip'>Hi</span></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".tooltip{ display:none } .has-tip:hover .tooltip{ display:inline }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Tooltip via CSS</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='has-tip' id='wrap'>Hover me<span class='tooltip'>Hi</span></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".has-tip .tooltip{ visibility:hidden } .has-tip:hover .tooltip{ visibility:visible }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-025",
+    "title": "Save Username",
+    "description": "Implement save(name) to localStorage and render greeting.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Save Username</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='name' value='Alice'><p id='hi'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "function save(name){ /* localStorage.setItem('name', name) */ }\nconst v=document.getElementById('name').value; save(v); document.getElementById('hi').textContent='Hello, '+localStorage.getItem('name');\nwindow.save = save;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement save(name) to localStorage and render greeting.",
+        "type": "dom",
+        "code": "const p=[],f=[]; if(document.getElementById('hi').textContent==='Hello, Alice') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use localStorage.setItem/getItem."
+      },
+      {
+        "level": 2,
+        "text": "Key 'name'."
+      },
+      {
+        "level": 3,
+        "text": "Concatenate greeting."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Save Username</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='name' value='Alice'><p id='hi'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function save(name){ localStorage.setItem('name', name); }\nconst v=document.getElementById('name').value; save(v); document.getElementById('hi').textContent='Hello, '+localStorage.getItem('name');\nwindow.save = save;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Save Username</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='name' value='Alice'><p id='hi'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function save(name){ localStorage.name=name; }\nconst v=document.getElementById('name').value; save(v); document.getElementById('hi').textContent='Hello, '+localStorage.name;\nwindow.save = save;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-026",
+    "title": "Progress Bar",
+    "description": "Set width of .bar to 60%.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Progress Bar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='progress' id='p'><div class='bar' id='b'></div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": ".progress{width:200px;height:10px;background:#eee} .bar{height:10px;width:0;background:#09f}\n",
+      "script.js": "// Set #b width to 60%\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Set width of .bar to 60%.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const b=document.querySelector('#b'); b.style.width='60%'; if(getComputedStyle(b).width.endswith('%') or int(''.join(filter(str.isdigit, getComputedStyle(b).width)))>0) p.push('a1'); return {passedIds:p, failedIds:[], passed:true};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Set style.width on .bar."
+      },
+      {
+        "level": 2,
+        "text": "Use percentage."
+      },
+      {
+        "level": 3,
+        "text": "Container provides context."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Progress Bar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='progress' id='p'><div class='bar' id='b'></div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".progress{width:200px;height:10px;background:#eee} .bar{height:10px;width:60%;background:#09f}\n",
+          "script.js": "// no JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Progress Bar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='progress' id='p'><div class='bar' id='b'></div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ".progress{width:200px;height:10px;background:#eee} .bar{height:10px;background:#09f}\n",
+          "script.js": "document.getElementById('b').style.width='60%';"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-027",
+    "title": "Image Gallery Next",
+    "description": "Implement nextIndex(i,len) (wrap-around) and update #img data-index.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Image Gallery Next</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='img' data-index='0'><button id='next'>Next</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "function nextIndex(i,len){ /* (i+1)%len */ }\nconst len=3; document.getElementById('next').addEventListener('click',()=>{ const el=document.getElementById('img'); el.dataset.index=String(nextIndex(+el.dataset.index, len)); }); document.getElementById('next').click();\nwindow.nextIndex = nextIndex;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement nextIndex(i,len) (wrap-around) and update #img data-index.",
+        "type": "dom",
+        "code": "const p=[],f=[]; if(document.getElementById('img').dataset.index==='1') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use modulo arithmetic."
+      },
+      {
+        "level": 2,
+        "text": "Read/write dataset."
+      },
+      {
+        "level": 3,
+        "text": "Convert to string."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Image Gallery Next</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='img' data-index='0'><button id='next'>Next</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function nextIndex(i,len){ return (i+1)%len; }\nconst len=3; document.getElementById('next').onclick=()=>{ const el=document.getElementById('img'); el.dataset.index=String(nextIndex(+el.dataset.index,len)); }; document.getElementById('next').click();\nwindow.nextIndex = nextIndex;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Image Gallery Next</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='img' data-index='0'><button id='next'>Next</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function nextIndex(i,len){ return (i+1>=len)?0:i+1; }\nconst len=3; document.getElementById('next').dispatchEvent(new Event('click'));\nwindow.nextIndex = nextIndex;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-028",
+    "title": "Rounded Button",
+    "description": "Give #rbtn border-radius at least 8px.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Button</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* rounded */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Give #rbtn border-radius at least 8px.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#rbtn')); const p=[],f=[]; if(parseInt(s.borderRadius)>=8) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use border-radius."
+      },
+      {
+        "level": 2,
+        "text": "Any value >=8px passes."
+      },
+      {
+        "level": 3,
+        "text": "Target #rbtn."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Button</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rbtn{ border-radius: 8px; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Button</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rbtn{ border-radius: .5rem; }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-029",
+    "title": "Swap List Items",
+    "description": "Swap #a and #b positions in the list.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Swap List Items</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li id='a'>A</li><li id='b'>B</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// Swap nodes\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Swap #a and #b positions in the list.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const list=document.querySelector('#list'); const a=document.getElementById('a'); const b=document.getElementById('b'); list.insertBefore(b,a); const order=[...list.children].map(x=>x.id).join(''); if(order==='ba') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use insertBefore."
+      },
+      {
+        "level": 2,
+        "text": "Work with parent node."
+      },
+      {
+        "level": 3,
+        "text": "Check order after."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Swap List Items</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li id='a'>A</li><li id='b'>B</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const l=document.getElementById('list'); const a=document.getElementById('a'); const b=document.getElementById('b'); l.insertBefore(b,a);"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Swap List Items</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li id='a'>A</li><li id='b'>B</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const l=document.getElementById('list'); const a=document.getElementById('a'); const b=document.getElementById('b'); const t=document.createElement('li'); l.replaceChild(t,a); l.replaceChild(a,b); l.replaceChild(b,t);"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-030",
+    "title": "Zebra Table Rows",
+    "description": "Color even rows #f0f0f0.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* zebra */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Color even rows #f0f0f0.",
+        "type": "dom",
+        "code": "const row=document.querySelectorAll('#tb tr')[1]; const s=getComputedStyle(row); const p=[],f=[]; if(s.backgroundColor==='rgb(240, 240, 240)') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use :nth-child(even)."
+      },
+      {
+        "level": 2,
+        "text": "Target rows."
+      },
+      {
+        "level": 3,
+        "text": "Set background color."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#tb tr:nth-child(even){ background:#f0f0f0; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "table#tb tr:nth-child(2n){ background:#f0f0f0; }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-031",
+    "title": "Countdown Once",
+    "description": "Click decreases #n by 1.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Countdown Once</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='go'>Go</button> <span id='n'>3</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// decrement on click\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Click decreases #n by 1.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const btn=document.querySelector('#go'); btn.onclick=()=>{ const n=document.getElementById('n'); n.textContent=String(+n.textContent-1); }; btn.click(); if(document.getElementById('n').textContent==='2') p.push('a1'); return {passedIds:p, failedIds:[], passed:true};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Add click handler."
+      },
+      {
+        "level": 2,
+        "text": "ParseInt and subtract."
+      },
+      {
+        "level": 3,
+        "text": "Update textContent."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Countdown Once</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='go'>Go</button> <span id='n'>3</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.getElementById('go').addEventListener('click',()=>{ const n=document.getElementById('n'); n.textContent=String(+n.textContent-1); });"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Countdown Once</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='go'>Go</button> <span id='n'>3</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "const b=document.getElementById('go'); b.onclick=()=>{ const n=document.getElementById('n'); n.textContent = String(parseInt(n.textContent,10)-1); };"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-032",
+    "title": "Rotate Element",
+    "description": "Rotate #rot by any angle.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Rotate #rot by any angle.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#rot')); const p=[],f=[]; if((s.transform||'none')!=='none') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use transform: rotate(...)."
+      },
+      {
+        "level": 2,
+        "text": "Any non-none value passes."
+      },
+      {
+        "level": 3,
+        "text": "Display inline-block if needed."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rot{ display:inline-block; transform: rotate(15deg); }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#rot{ transform: rotate(0.2rad); }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-033",
+    "title": "Serialize Form",
+    "description": "Implement serialize(form) => {name:value}.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Serialize Form</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input name='a' value='1'><input name='b' value='2'></form>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "function serialize(form){ /* TODO: loop elements with name */ }\nwindow.__form__=serialize(document.getElementById('f'));\nwindow.serialize = serialize;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement serialize(form) => {name:value}.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const o=window.__form__; if(o && o.a==='1' && o.b==='2') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Filter elements that have name."
+      },
+      {
+        "level": 2,
+        "text": "Assign value by name."
+      },
+      {
+        "level": 3,
+        "text": "Return new object."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Serialize Form</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input name='a' value='1'><input name='b' value='2'></form>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function serialize(form){ const out={}; for(const el of form.elements){ if(el.name) out[el.name]=el.value; } return out; }\nwindow.__form__=serialize(document.getElementById('f'));\nwindow.serialize = serialize;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Serialize Form</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input name='a' value='1'><input name='b' value='2'></form>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function serialize(form){ return Array.from(form.elements).filter(e=>e.name).reduce((a,e)=>(a[e.name]=e.value,a),{}); }\nwindow.__form__=serialize(document.getElementById('f'));\nwindow.serialize = serialize;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-034",
+    "title": "Letter Spacing",
+    "description": "Set #h2 letter-spacing to 2px.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Set #h2 letter-spacing to 2px.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#h2')); const p=[],f=[]; if(s.letterSpacing==='2px') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use letter-spacing."
+      },
+      {
+        "level": 2,
+        "text": "Target #h2."
+      },
+      {
+        "level": 3,
+        "text": "Unit px or equivalent."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#h2{ letter-spacing: 2px; }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#h2{ letter-spacing: 0.125em; }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-035",
+    "title": "Text Shadow",
+    "description": "Apply a non-none text-shadow to #ts.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Apply a non-none text-shadow to #ts.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#ts')); const p=[],f=[]; if((s.textShadow||'')!=='none' and s.textShadow!='') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use text-shadow."
+      },
+      {
+        "level": 2,
+        "text": "Any value counts."
+      },
+      {
+        "level": 3,
+        "text": "Subtlety preferred."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#ts{ text-shadow: 1px 1px 2px rgba(0,0,0,.3); }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "#ts{ text-shadow: 0 0 6px rgba(0,0,0,.5); }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-036",
+    "title": "Prevent Form Submit",
+    "description": "Block default submit; set #status to 'blocked'.",
+    "why_it_matters": "Real web apps are interactive: DOM manipulation, styling, and events transform pure logic into user-facing behavior. These tasks blend algorithmic thinking with UI changes you can verify instantly.",
+    "difficulty": 1,
+    "category": "html-css-js",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Prevent Form Submit</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input><button id='s' type='submit'>Send</button></form><p id='status'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "// prevent submit\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Block default submit; set #status to 'blocked'.",
+        "type": "dom",
+        "code": "const p=[],f=[]; document.getElementById('f').addEventListener('submit',e=>{ e.preventDefault(); document.getElementById('status').textContent='blocked'; }); document.getElementById('s').click(); if(document.getElementById('status').textContent==='blocked') p.push('a1'); return {passedIds:p, failedIds:[], passed:true};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Listen to submit event."
+      },
+      {
+        "level": 2,
+        "text": "Call preventDefault()."
+      },
+      {
+        "level": 3,
+        "text": "Update status."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Prevent Form Submit</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input><button id='s' type='submit'>Send</button></form><p id='status'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.getElementById('f').onsubmit=(e)=>{ e.preventDefault(); document.getElementById('status').textContent='blocked'; };"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Prevent Form Submit</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input><button id='s' type='submit'>Send</button></form><p id='status'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "document.getElementById('f').addEventListener('submit',e=>{ e.preventDefault(); document.getElementById('status').innerText='blocked'; });"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-037",
+    "title": "Use CSS Variable",
+    "description": "Declare --gap:16px and apply to grid gap.",
+    "why_it_matters": "CSS turns structure into experience. Mastering layout and visual states is essential for accessible, responsive interfaces that feel polished under real constraints.",
+    "difficulty": 1,
+    "category": "html-css",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Use CSS Variable</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='g'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "#g{ display:grid; grid-template-columns:1fr 1fr; }\n",
+      "script.js": "// No JS required\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Declare --gap:16px and apply to grid gap.",
+        "type": "dom",
+        "code": "const s=getComputedStyle(document.querySelector('#g')); const p=[],f=[]; if(getComputedStyle(document.documentElement).getPropertyValue('--gap').trim()==='16px' and s.gap=='16px') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Declare in :root."
+      },
+      {
+        "level": 2,
+        "text": "Use var(--gap)."
+      },
+      {
+        "level": 3,
+        "text": "Apply to gap property."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Use CSS Variable</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='g'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ":root{ --gap:16px } #g{ gap: var(--gap); }\n",
+          "script.js": "// No JS\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Use CSS Variable</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='g'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": ":root{ --gap:16px } #g{ column-gap: var(--gap); row-gap: var(--gap); }\n",
+          "script.js": "// No JS\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-038",
+    "title": "Texts to Array",
+    "description": "Collect all li text into array via texts(ul) and store on window.__arr.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Texts to Array</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>a</li><li>b</li><li>c</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "function texts(ul){ /* return array of textContent for li children */ }\nwindow.__arr = texts(document.getElementById('list'));\nwindow.texts = texts;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Collect all li text into array via texts(ul) and store on window.__arr.",
+        "type": "dom",
+        "code": "const p=[],f=[]; const a=window.__arr; if(Array.isArray(a) and ','.join(a)=='a,b,c') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Use querySelectorAll('li')."
+      },
+      {
+        "level": 2,
+        "text": "Map li.textContent."
+      },
+      {
+        "level": 3,
+        "text": "Return array."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Texts to Array</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>a</li><li>b</li><li>c</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function texts(ul){ return Array.from(ul.querySelectorAll('li')).map(li=>li.textContent); }\nwindow.__arr=texts(document.getElementById('list'));\nwindow.texts = texts;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Texts to Array</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>a</li><li>b</li><li>c</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function texts(ul){ const out=[]; for(const li of ul.getElementsByTagName('li')) out.push(li.textContent); return out; }\nwindow.__arr=texts(document.getElementById('list'));\nwindow.texts = texts;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-039",
+    "title": "Enable on Length",
+    "description": "Implement isLongEnough(s,min) and enable #go if valid.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Enable on Length</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='txt' value='hi'><button id='go' disabled>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "function isLongEnough(s,min){ /* return s.length>=min */ }\nconst input=document.getElementById('txt'); const go=document.getElementById('go'); if(isLongEnough(input.value,2)) go.disabled=false;\nwindow.isLongEnough = isLongEnough;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement isLongEnough(s,min) and enable #go if valid.",
+        "type": "dom",
+        "code": "const p=[],f=[]; if(!document.getElementById('go').disabled) p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Keep it pure."
+      },
+      {
+        "level": 2,
+        "text": "Compare length with min."
+      },
+      {
+        "level": 3,
+        "text": "Set disabled=false when valid."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Enable on Length</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='txt' value='hi'><button id='go' disabled>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function isLongEnough(s,min){ return s.length>=min; }\nconst input=document.getElementById('txt'); const go=document.getElementById('go'); if(isLongEnough(input.value,2)) go.disabled=false;\nwindow.isLongEnough = isLongEnough;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Enable on Length</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='txt' value='hi'><button id='go' disabled>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function isLongEnough(s,min){ return (s||'').length>=min; }\nconst input=document.getElementById('txt'); const go=document.getElementById('go'); go.disabled=!isLongEnough(input.value,2);\nwindow.isLongEnough = isLongEnough;\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "web-040",
+    "title": "Toggle Case",
+    "description": "Implement toggleCase(s) and set #out to transformed string.",
+    "why_it_matters": "Pure logic underpins UI behavior. Separating a pure function from DOM updates yields testable, reusable code—exactly how robust web apps are built.",
+    "difficulty": 2,
+    "category": "logic+dom",
+    "scaffold": {
+      "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Toggle Case</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='out'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+      "style.css": "/* */\n",
+      "script.js": "function toggleCase(s){ /* switch a<->A */ }\ndocument.getElementById('out').textContent=toggleCase('AbC');\nwindow.toggleCase = toggleCase;\n"
+    },
+    "tests": [
+      {
+        "id": "t1",
+        "description": "Implement toggleCase(s) and set #out to transformed string.",
+        "type": "dom",
+        "code": "const p=[],f=[]; if(document.getElementById('out').textContent==='aBc') p.push('a1'); else f.push('a1'); return {passedIds:p, failedIds:f, passed:!f.length};"
+      }
+    ],
+    "hints": [
+      {
+        "level": 1,
+        "text": "Iterate characters."
+      },
+      {
+        "level": 2,
+        "text": "If lower -> upper, else upper -> lower."
+      },
+      {
+        "level": 3,
+        "text": "Join back."
+      }
+    ],
+    "solutions": [
+      {
+        "id": "sol-1",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Toggle Case</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='out'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function toggleCase(s){ let out=''; for(const ch of s){ const low=ch.toLowerCase(); const up=ch.toUpperCase(); out+= ch===low ? up : low; } return out; }\ndocument.getElementById('out').textContent=toggleCase('AbC');\nwindow.toggleCase = toggleCase;\n"
+        }
+      },
+      {
+        "id": "sol-2",
+        "files": {
+          "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Toggle Case</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='out'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
+          "style.css": "/* */\n",
+          "script.js": "function toggleCase(s){ return s.replace(/[a-z]/gi,c=> c===c.toLowerCase()? c.toUpperCase(): c.toLowerCase()); }\ndocument.getElementById('out').textContent=toggleCase('AbC');\nwindow.toggleCase = toggleCase;\n"
+        }
+      }
+    ]
+  }
+]
