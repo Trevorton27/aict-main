@@ -51,6 +51,9 @@ export default function LearnPage() {
   const [attemptCount, setAttemptCount] = useState(0);
   const REQUIRED_ATTEMPTS = 3;
 
+  // ---------- Preview collapse state ----------
+  const [isPreviewCollapsed, setIsPreviewCollapsed] = useState(false);
+
   
   // ---------- Variant Generation ----------
   async function loadVariantForCurrent() {
@@ -412,7 +415,8 @@ export default function LearnPage() {
 
         {/* Middle: Editor + Preview */}
         <div className="flex-1 flex overflow-hidden">
-          <div className="flex-1 border-r border-gray-200">
+          {/* Editor Section */}
+          <div className="flex-1 border-r border-gray-200 flex flex-col">
             <CodeEditor
               files={editorFiles}
               onFilesChange={setEditorFiles}
@@ -420,13 +424,64 @@ export default function LearnPage() {
               onActivePathChange={setActivePath}
             />
           </div>
-          <div className="flex-1">
-            <PreviewSandbox files={editorFiles} refreshTrigger={refreshTrigger} />
-          </div>
+
+          {/* Preview Section - Conditionally render based on collapse state */}
+          {!isPreviewCollapsed ? (
+            /* Expanded Preview */
+            <div className="flex-1 flex flex-col transition-all duration-300">
+              {/* Preview Header with Collapse Button */}
+              <div className="bg-gray-50 border-b border-gray-200 px-3 py-2 flex items-center justify-between">
+                <h3 className="text-sm font-semibold text-gray-700">Preview</h3>
+                <button
+                  onClick={() => {
+                    console.log('Collapsing preview');
+                    setIsPreviewCollapsed(true);
+                  }}
+                  className="px-3 py-1.5 bg-blue-600 hover:bg-blue-700 text-white rounded text-xs font-medium transition-colors"
+                  title="Collapse preview panel"
+                >
+                  Collapse ▶
+                </button>
+              </div>
+              {/* Preview Content */}
+              <div className="flex-1 overflow-hidden">
+                <PreviewSandbox files={editorFiles} refreshTrigger={refreshTrigger} />
+              </div>
+            </div>
+          ) : (
+            /* Collapsed Preview - Vertical Bar */
+            <div
+              className="w-16 flex flex-col bg-blue-600 border-l-2 border-blue-700 relative z-50 shadow-lg cursor-pointer"
+              onClick={(e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                console.log('DIV CLICKED - Expanding preview, current state:', isPreviewCollapsed);
+                alert('Clicked! Expanding preview...');
+                setIsPreviewCollapsed(false);
+                console.log('After setIsPreviewCollapsed(false)');
+              }}
+              title="Click anywhere to expand preview panel"
+            >
+              {/* Expand Button - Vertical */}
+              <div className="flex-1 flex flex-col items-center justify-center hover:bg-blue-700 transition-colors py-4">
+                <span className="text-3xl text-white mb-4 font-bold pointer-events-none">◀</span>
+                <div className="flex flex-col items-center gap-1 pointer-events-none">
+                  {['P', 'R', 'E', 'V', 'I', 'E', 'W'].map((letter, i) => (
+                    <span key={i} className="text-sm font-bold text-white">
+                      {letter}
+                    </span>
+                  ))}
+                </div>
+                <div className="mt-4 text-xs text-white opacity-75 pointer-events-none">
+                  Click
+                </div>
+              </div>
+            </div>
+          )}
         </div>
 
         {/* Right: Chat & Tests */}
-        <div className="w-96 border-l border-gray-200 flex flex-col">
+        <div className="w-96 border-l border-gray-200 flex flex-col relative z-10">
           {/* Chat Panel - Top half */}
           <div className="flex-1 border-b border-gray-200 overflow-hidden">
             <ChatPanel
