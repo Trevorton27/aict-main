@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Deep Clone (JSON-safe)</title>
+</head>
+<body>
+  <h1>Deep Clone (JSON-safe)</h1>
+  <p>Open the console and implement <code>script.js</code>.</p>
+  <script src="script.js"></script>
+<pre id="test-results" style="padding:12px;background:#111;color:#0f0;white-space:pre-wrap"></pre>
+<script>
+window.$assert = (id, cond) => ({ id, passed: !!cond });
+window.summarize = (results) => {
+  const passedIds = results.filter(r => r.passed).map(r => r.id);
+  const failedIds = results.filter(r => !r.passed).map(r => r.id);
+  const passed = failedIds.length === 0;
+  console.log("Test Results:", { passed, passedIds, failedIds });
+  const el = document.getElementById("test-results");
+  if (el) el.textContent = JSON.stringify({ passed, passedIds, failedIds }, null, 2);
+  return { passed, passedIds, failedIds };
+};
+</script>
+</body>
+</html>
