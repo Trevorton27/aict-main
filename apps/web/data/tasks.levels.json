@@ -363,7 +363,7 @@
     "id": "html-010",
     "title": "Simple Table",
     "description": "Create a 2x2 table with headers 'A','B' and row '1','2'.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Simple Table</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add a table -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -403,7 +403,7 @@
     "id": "html-011",
     "title": "Form Labels",
     "description": "Create a form with a text input labeled 'Name'. The label should be explicitly associated.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Form Labels</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add form with label -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -443,7 +443,7 @@
     "id": "html-012",
     "title": "Email Input",
     "description": "Add an email input named 'email' that is required.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Email Input</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add email input -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -483,7 +483,7 @@
     "id": "html-013",
     "title": "Fieldset & Legend",
     "description": "Group two radio inputs under a fieldset with legend 'Size'.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Fieldset & Legend</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add fieldset with legend and radios -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -523,7 +523,7 @@
     "id": "html-014",
     "title": "Select Menu",
     "description": "Create a select named 'color' with options Red, Green, Blue.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Select Menu</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add select menu -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1043,7 +1043,7 @@
     "id": "html-027",
     "title": "Article & Section",
     "description": "Create an article containing a section with a heading.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Article & Section</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add article with section -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1243,7 +1243,7 @@
     "id": "html-032",
     "title": "Progress",
     "description": "Add a progress bar with value 30 of max 100.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Progress</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add progress -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1283,7 +1283,7 @@
     "id": "html-033",
     "title": "Meter",
     "description": "Add a meter with value 0.7 between 0 and 1.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Meter</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add meter -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1323,7 +1323,7 @@
     "id": "html-034",
     "title": "Accessible Iframe",
     "description": "Embed an iframe to 'about:blank' with a title 'preview'.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Accessible Iframe</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add iframe -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1363,7 +1363,7 @@
     "id": "html-035",
     "title": "ARIA Label",
     "description": "Add a search input with aria-label='Search site'.",
-    "difficulty": 2,
+    "difficulty": 1,
     "category": "html",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>ARIA Label</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <!-- Add aria-labeled input -->\n\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1603,7 +1603,7 @@
     "id": "css-001",
     "title": "Change Text Color",
     "description": "Set the paragraph text color to blue.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Text Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p1'>Hello, CSS!</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1653,7 +1653,7 @@
     "id": "css-002",
     "title": "Add a Red Border",
     "description": "Add a 2px solid red border to the div with id='box'.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Red Border</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='box'>Hello border</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1703,7 +1703,7 @@
     "id": "css-003",
     "title": "Center Text Horizontally",
     "description": "Horizontally center the text inside the div using CSS.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Center Text Horizontally</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='centerme'>Center me!</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1753,7 +1753,7 @@
     "id": "css-004",
     "title": "Add Padding",
     "description": "Add 20px padding to the box.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Padding</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='pad'>Padding please</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1803,7 +1803,7 @@
     "id": "css-005",
     "title": "Set Background Color",
     "description": "Set the page background to yellow.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Set Background Color</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p>Background test</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1853,7 +1853,7 @@
     "id": "css-006",
     "title": "Add Margin",
     "description": "Add 30px margin-top to the paragraph.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add Margin</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='mt'>A paragraph</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1903,7 +1903,7 @@
     "id": "css-007",
     "title": "Font Size",
     "description": "Set the h1 font size to 2em.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Font Size</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='big'>Heading</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -1953,7 +1953,7 @@
     "id": "css-008",
     "title": "Monospace for Code",
     "description": "Use a monospace font for the code element.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Monospace for Code</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <code id='c'>const x=1;</code>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2003,7 +2003,7 @@
     "id": "css-009",
     "title": "Make Text Bold",
     "description": "Make all span text bold.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Make Text Bold</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <span id='b'>Bold me</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2053,7 +2053,7 @@
     "id": "css-010",
     "title": "Italic Notes",
     "description": "Italicize text in class 'note'.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Italic Notes</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p class='note' id='n'>Note text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2103,7 +2103,7 @@
     "id": "css-011",
     "title": "Underline Links",
     "description": "Underline all anchor links.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Underline Links</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <a id='lnk' href='#'>link</a>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2153,7 +2153,7 @@
     "id": "css-012",
     "title": "Remove List Bullets",
     "description": "Remove bullets from the unordered list.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove List Bullets</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='u'><li>One</li><li>Two</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2353,7 +2353,7 @@
     "id": "css-016",
     "title": "Disabled Button Style",
     "description": "Style disabled buttons with a gray look.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Button Style</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn' disabled>Save</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2453,7 +2453,7 @@
     "id": "css-018",
     "title": "Circular Avatar",
     "description": "Make the avatar image perfectly circular.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Circular Avatar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='avatar' class='avatar' src='x.jpg' alt='avatar' width='100' height='100'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2503,7 +2503,7 @@
     "id": "css-019",
     "title": "Card Shadow",
     "description": "Add a shadow to the card element.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='card'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2553,7 +2553,7 @@
     "id": "css-020",
     "title": "Add a Transition",
     "description": "Add a non-zero-duration transition to the button.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add a Transition</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='btn2' class='btn'>Hover me</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2703,7 +2703,7 @@
     "id": "css-023",
     "title": "Hide Element",
     "description": "Hide the element with id 'hide-me'.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hide Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='hide-me'>You shouldn't see me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2903,7 +2903,7 @@
     "id": "css-027",
     "title": "nth-child Even Rows",
     "description": "Style every even list item green using :nth-child(even).",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>nth-child Even Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>1</li><li>2</li><li>3</li><li>4</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -2953,7 +2953,7 @@
     "id": "css-028",
     "title": "Uppercase Buttons",
     "description": "Transform button text to uppercase.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='btn3'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3003,7 +3003,7 @@
     "id": "css-029",
     "title": "Comfortable Paragraphs",
     "description": "Set paragraph line-height to 1.5.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Comfortable Paragraphs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='lp'>Lorem text</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3053,7 +3053,7 @@
     "id": "css-030",
     "title": "Rounded Buttons",
     "description": "Give the button rounded corners (>=8px).",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3103,7 +3103,7 @@
     "id": "css-031",
     "title": "Hero Background Image",
     "description": "Set a background image 'hero.jpg' on the hero section.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Hero Background Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <section id='hero'>Hero</section>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3153,7 +3153,7 @@
     "id": "css-032",
     "title": "Letter Spacing",
     "description": "Set letter-spacing of the h2 to 2px.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3203,7 +3203,7 @@
     "id": "css-033",
     "title": "Text Shadow",
     "description": "Apply any non-none text-shadow to the h3.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3253,7 +3253,7 @@
     "id": "css-034",
     "title": "Border-Box Sizing",
     "description": "Set box-sizing to border-box for the element.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Border-Box Sizing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='bb'>Box</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3303,7 +3303,7 @@
     "id": "css-035",
     "title": "Constrain Container Width",
     "description": "Limit the container's max-width to 800px.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Constrain Container Width</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='container'>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3353,7 +3353,7 @@
     "id": "css-036",
     "title": "Scrollable Box",
     "description": "Make the box scroll vertically.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Scrollable Box</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='scroll' style='height:100px'>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br>Line<br></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3453,7 +3453,7 @@
     "id": "css-038",
     "title": "Disabled Inputs Look Dim",
     "description": "Dim disabled inputs using opacity 0.5.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Disabled Inputs Look Dim</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='di' disabled value='x'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3553,7 +3553,7 @@
     "id": "css-040",
     "title": "Dotted Separator",
     "description": "Make the horizontal rule a dotted line.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dotted Separator</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <hr id='sep'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3603,7 +3603,7 @@
     "id": "js-001",
     "title": "Sum Array",
     "description": "Return the sum of a numeric array.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sum Array</title>\n</head>\n<body>\n  <h1>Sum Array</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3653,7 +3653,7 @@
     "id": "js-002",
     "title": "Factorial",
     "description": "Compute n! for n>=0.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Factorial</title>\n</head>\n<body>\n  <h1>Factorial</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3703,7 +3703,7 @@
     "id": "js-003",
     "title": "Palindrome (alphanumeric)",
     "description": "Return true if a string reads the same backward, ignoring non-alphanumerics and case.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Palindrome (alphanumeric)</title>\n</head>\n<body>\n  <h1>Palindrome (alphanumeric)</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3753,7 +3753,7 @@
     "id": "js-004",
     "title": "FizzBuzz",
     "description": "Return an array 1..n with 'Fizz','Buzz','FizzBuzz' substitutions.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>FizzBuzz</title>\n</head>\n<body>\n  <h1>FizzBuzz</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3803,7 +3803,7 @@
     "id": "js-005",
     "title": "Reverse Words",
     "description": "Reverse the order of words in a sentence.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Reverse Words</title>\n</head>\n<body>\n  <h1>Reverse Words</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3853,7 +3853,7 @@
     "id": "js-006",
     "title": "Unique Elements",
     "description": "Return a new array containing unique elements in original order.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Unique Elements</title>\n</head>\n<body>\n  <h1>Unique Elements</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3903,7 +3903,7 @@
     "id": "js-007",
     "title": "Count Vowels",
     "description": "Count vowels (a, e, i, o, u) case-insensitive.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Count Vowels</title>\n</head>\n<body>\n  <h1>Count Vowels</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -3953,7 +3953,7 @@
     "id": "js-008",
     "title": "Anagram Check",
     "description": "Return true if two strings are anagrams (ignore case, spaces).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Anagram Check</title>\n</head>\n<body>\n  <h1>Anagram Check</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4003,7 +4003,7 @@
     "id": "js-009",
     "title": "Two Sum Indices",
     "description": "Return indices [i,j] with nums[i]+nums[j]==target (exactly one solution).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two Sum Indices</title>\n</head>\n<body>\n  <h1>Two Sum Indices</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4053,7 +4053,7 @@
     "id": "js-010",
     "title": "Flatten One Level",
     "description": "Flatten a 1-level nested array.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Flatten One Level</title>\n</head>\n<body>\n  <h1>Flatten One Level</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4103,7 +4103,7 @@
     "id": "js-011",
     "title": "Clamp Number",
     "description": "Clamp n into [min,max].",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Clamp Number</title>\n</head>\n<body>\n  <h1>Clamp Number</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4153,7 +4153,7 @@
     "id": "js-012",
     "title": "Chunk Array",
     "description": "Split an array into chunks of size k (last chunk may be smaller).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Chunk Array</title>\n</head>\n<body>\n  <h1>Chunk Array</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4203,7 +4203,7 @@
     "id": "js-013",
     "title": "Shallow Equal Objects",
     "description": "Return true if two plain objects have same keys and values (shallow).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Shallow Equal Objects</title>\n</head>\n<body>\n  <h1>Shallow Equal Objects</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4253,7 +4253,7 @@
     "id": "js-014",
     "title": "Rotate Array Right",
     "description": "Rotate array right by k steps (non-destructive).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Array Right</title>\n</head>\n<body>\n  <h1>Rotate Array Right</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4303,7 +4303,7 @@
     "id": "js-015",
     "title": "Range Generator",
     "description": "Return [start, start+step, ...] up to end (inclusive if exact).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Range Generator</title>\n</head>\n<body>\n  <h1>Range Generator</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4353,7 +4353,7 @@
     "id": "js-016",
     "title": "Median",
     "description": "Return median of numeric array.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Median</title>\n</head>\n<body>\n  <h1>Median</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4403,7 +4403,7 @@
     "id": "js-017",
     "title": "Prime Check",
     "description": "Return true if n is prime (n>=2).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Prime Check</title>\n</head>\n<body>\n  <h1>Prime Check</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4453,7 +4453,7 @@
     "id": "js-018",
     "title": "Nth Fibonacci",
     "description": "Return nth Fibonacci (0-indexed).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Nth Fibonacci</title>\n</head>\n<body>\n  <h1>Nth Fibonacci</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4503,7 +4503,7 @@
     "id": "js-019",
     "title": "Balanced Brackets",
     "description": "Return true if (), [], {} are balanced.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Balanced Brackets</title>\n</head>\n<body>\n  <h1>Balanced Brackets</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4553,7 +4553,7 @@
     "id": "js-020",
     "title": "Map Object Values",
     "description": "Apply f to each value of obj; return new object.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Map Object Values</title>\n</head>\n<body>\n  <h1>Map Object Values</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4603,7 +4603,7 @@
     "id": "js-021",
     "title": "Deep Clone (JSON-safe)",
     "description": "Deep clone a JSON-serializable value.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Deep Clone (JSON-safe)</title>\n</head>\n<body>\n  <h1>Deep Clone (JSON-safe)</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4653,7 +4653,7 @@
     "id": "js-022",
     "title": "Group By",
     "description": "Group array items by key function f; return {key: items}.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Group By</title>\n</head>\n<body>\n  <h1>Group By</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4703,7 +4703,7 @@
     "id": "js-023",
     "title": "Compose Functions",
     "description": "compose(f,g)(x) returns f(g(x)).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Compose Functions</title>\n</head>\n<body>\n  <h1>Compose Functions</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4753,7 +4753,7 @@
     "id": "js-024",
     "title": "Memoize (single-arg)",
     "description": "Memoize a single-argument pure function.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Memoize (single-arg)</title>\n</head>\n<body>\n  <h1>Memoize (single-arg)</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4803,7 +4803,7 @@
     "id": "js-025",
     "title": "Curry (two-arg)",
     "description": "curry(f)(a)(b) == f(a,b).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Curry (two-arg)</title>\n</head>\n<body>\n  <h1>Curry (two-arg)</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4853,7 +4853,7 @@
     "id": "js-026",
     "title": "Parse Query String",
     "description": "Parse '?a=1&b=hello' into {a:'1',b:'hello'}.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Parse Query String</title>\n</head>\n<body>\n  <h1>Parse Query String</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4903,7 +4903,7 @@
     "id": "js-027",
     "title": "toCamelCase",
     "description": "Convert 'hello-world test' -> 'helloWorldTest'.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>toCamelCase</title>\n</head>\n<body>\n  <h1>toCamelCase</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -4953,7 +4953,7 @@
     "id": "js-028",
     "title": "fromCamelCase",
     "description": "Convert 'helloWorldTest' -> 'hello-world-test'.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>fromCamelCase</title>\n</head>\n<body>\n  <h1>fromCamelCase</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5003,7 +5003,7 @@
     "id": "js-029",
     "title": "Longest Common Prefix",
     "description": "Given array of strings, return longest common prefix.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Longest Common Prefix</title>\n</head>\n<body>\n  <h1>Longest Common Prefix</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5053,7 +5053,7 @@
     "id": "js-030",
     "title": "Array Intersection",
     "description": "Return array of values present in both arrays (unique, ordered by first).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Array Intersection</title>\n</head>\n<body>\n  <h1>Array Intersection</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5103,7 +5103,7 @@
     "id": "js-031",
     "title": "Array Difference",
     "description": "Return items in a that are not in b (preserve order, unique).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Array Difference</title>\n</head>\n<body>\n  <h1>Array Difference</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5153,7 +5153,7 @@
     "id": "js-032",
     "title": "Pick Keys",
     "description": "Return new object with only listed keys.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Pick Keys</title>\n</head>\n<body>\n  <h1>Pick Keys</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5203,7 +5203,7 @@
     "id": "js-033",
     "title": "Omit Keys",
     "description": "Return new object without listed keys.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Omit Keys</title>\n</head>\n<body>\n  <h1>Omit Keys</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5253,7 +5253,7 @@
     "id": "js-034",
     "title": "Greatest Common Divisor",
     "description": "Return gcd(a,b) where a,b>=0.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Greatest Common Divisor</title>\n</head>\n<body>\n  <h1>Greatest Common Divisor</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5303,7 +5303,7 @@
     "id": "js-035",
     "title": "Least Common Multiple",
     "description": "Return lcm(a,b) using gcd.",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Least Common Multiple</title>\n</head>\n<body>\n  <h1>Least Common Multiple</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5353,7 +5353,7 @@
     "id": "js-036",
     "title": "Fast Power",
     "description": "Compute a^b using fast exponentiation (b>=0).",
-    "difficulty": 1,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Fast Power</title>\n</head>\n<body>\n  <h1>Fast Power</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5403,7 +5403,7 @@
     "id": "js-037",
     "title": "Binary Search",
     "description": "Return index of target in sorted array, or -1.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Binary Search</title>\n</head>\n<body>\n  <h1>Binary Search</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5553,7 +5553,7 @@
     "id": "js-040",
     "title": "Roman to Integer",
     "description": "Convert a Roman numeral (I,V,X,L,C,D,M) to integer.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "javascript",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Roman to Integer</title>\n</head>\n<body>\n  <h1>Roman to Integer</h1>\n  <p>Open the console and implement <code>script.js</code>.</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5603,7 +5603,7 @@
     "id": "web-001",
     "title": "Change Heading Text",
     "description": "Click button to change h1 text to 'Updated'.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Change Heading Text</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='title'>Original</h1><button id='btn'>Change</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5653,7 +5653,7 @@
     "id": "web-002",
     "title": "Dark Mode Toggle",
     "description": "Toggle 'dark' class on body when switch clicked.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Dark Mode Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='toggle'>Toggle</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5703,7 +5703,7 @@
     "id": "web-003",
     "title": "Add List Item",
     "description": "Click 'Add' to append <li>New</li> to #list.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Add List Item</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>Old</li></ul><button id='add'>Add</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5753,7 +5753,7 @@
     "id": "web-006",
     "title": "Simple Tabs",
     "description": "Clicking a tab shows its panel and hides the other.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Simple Tabs</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='tab' data-for='a'>A</button><button class='tab' data-for='b'>B</button><div id='a'>A</div><div id='b'>B</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5803,7 +5803,7 @@
     "id": "web-013",
     "title": "Modal Open/Close",
     "description": "Open modal by adding 'open' class; close removes it.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Modal Open/Close</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='open'>Open</button><div id='modal' class='modal'><button id='close'>X</button></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5853,7 +5853,7 @@
     "id": "web-018",
     "title": "Remove Element",
     "description": "Remove #ad from the page.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Remove Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='ad'>Ad</div><div>Content</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5903,7 +5903,7 @@
     "id": "web-019",
     "title": "Select All",
     "description": "Master checkbox toggles all .item checkboxes.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Select All</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <label><input id='all' type='checkbox'></label><div><label><input class='item' type='checkbox'></label><label><input class='item' type='checkbox'></label></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -5953,7 +5953,7 @@
     "id": "web-021",
     "title": "Highlight Search",
     "description": "Wrap matches of 'lo' in <mark> inside #p.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Highlight Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='p'>lorem ipsum dolor</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -6003,7 +6003,7 @@
     "id": "web-023",
     "title": "Accordion",
     "description": "Click header toggles panel visibility.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Accordion</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='acc' id='h'>Header</button><div id='panel'>Text</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -6053,7 +6053,7 @@
     "id": "web-026",
     "title": "Progress Bar",
     "description": "Set width of .bar to 60%.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Progress Bar</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='progress' id='p'><div class='bar' id='b'></div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -6103,7 +6103,7 @@
     "id": "web-029",
     "title": "Swap List Items",
     "description": "Swap #a and #b positions in the list.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Swap List Items</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li id='a'>A</li><li id='b'>B</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -6153,7 +6153,7 @@
     "id": "web-031",
     "title": "Countdown Once",
     "description": "Click decreases #n by 1.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Countdown Once</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='go'>Go</button> <span id='n'>3</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -6203,7 +6203,7 @@
     "id": "web-036",
     "title": "Prevent Form Submit",
     "description": "Block default submit; set #status to 'blocked'.",
-    "difficulty": 1,
+    "difficulty": 4,
     "category": "html-css-js",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Prevent Form Submit</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input><button id='s' type='submit'>Send</button></form><p id='status'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -10813,7 +10813,7 @@
     "id": "web-004",
     "title": "Card Shadow",
     "description": "Apply a non-none box-shadow to .card.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Card Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='card' id='c'>Card</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -10863,7 +10863,7 @@
     "id": "web-005",
     "title": "Filter List by Query",
     "description": "Implement filter(items, q) returning filtered array, and render matching li only.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Filter List by Query</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='ap'><ul id='list'><li>apple</li><li>pear</li><li>grape</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -10913,7 +10913,7 @@
     "id": "web-007",
     "title": "Sticky Header",
     "description": "Make header stick to top using position:sticky.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sticky Header</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <header id='hdr'>Header</header><main style='height:1000px'>Content</main>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -10963,7 +10963,7 @@
     "id": "web-008",
     "title": "Email Validation",
     "description": "Implement isEmail(s) and add 'error' class if invalid on blur.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Email Validation</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='email' value='notanemail'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11013,7 +11013,7 @@
     "id": "web-009",
     "title": "Sort Table Asc",
     "description": "Implement compare(a,b) numeric and sort table rows by first cell.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Sort Table Asc</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='t'><tbody><tr><td>3</td></tr><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11063,7 +11063,7 @@
     "id": "web-010",
     "title": "Responsive Image",
     "description": "Make #pic width:100% with max-width 400px.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Responsive Image</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div style='width:500px'><img id='pic' src='x.jpg'></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11113,7 +11113,7 @@
     "id": "web-011",
     "title": "Debounce Search",
     "description": "Implement debounce(fn,delay) and call once after rapid invocations.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Debounce Search</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='q' value='x'><p id='hits'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11163,7 +11163,7 @@
     "id": "web-012",
     "title": "Throttle Function",
     "description": "Implement throttle(fn,delay) so fn runs at most once per window.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Throttle Function</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='n'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11213,7 +11213,7 @@
     "id": "web-014",
     "title": "Two-Column Grid",
     "description": "Use CSS Grid with two equal columns.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Two-Column Grid</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='grid'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11263,7 +11263,7 @@
     "id": "web-015",
     "title": "Theme Variable Toggle",
     "description": "Define --primary on :root and toggle value via JS.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Theme Variable Toggle</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h1 id='t'>Title</h1>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11313,7 +11313,7 @@
     "id": "web-016",
     "title": "Uppercase Buttons",
     "description": "Make .btn text uppercase.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Uppercase Buttons</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button class='btn' id='b'>press</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11363,7 +11363,7 @@
     "id": "web-017",
     "title": "Counter with Step",
     "description": "Implement parseStep(btn) and increment #n by step from data-step.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Counter with Step</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='inc' data-step='3'>+</button> <span id='n'>0</span>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11413,7 +11413,7 @@
     "id": "web-020",
     "title": "Word Count",
     "description": "Implement countWords(s) and display count in #out on input.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Word Count</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <textarea id='txt'>one two  three</textarea><p id='out'>0</p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11463,7 +11463,7 @@
     "id": "web-022",
     "title": "Copy to Clipboard",
     "description": "Implement copy(text) using Clipboard API (fallback to window.__clipboard__).",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Copy to Clipboard</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='src' value='secret'>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11513,7 +11513,7 @@
     "id": "web-024",
     "title": "Tooltip via CSS",
     "description": "Show span.tooltip when parent is hovered.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Tooltip via CSS</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div class='has-tip' id='wrap'>Hover me<span class='tooltip'>Hi</span></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11563,7 +11563,7 @@
     "id": "web-025",
     "title": "Save Username",
     "description": "Implement save(name) to localStorage and render greeting.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Save Username</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='name' value='Alice'><p id='hi'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11613,7 +11613,7 @@
     "id": "web-027",
     "title": "Image Gallery Next",
     "description": "Implement nextIndex(i,len) (wrap-around) and update #img data-index.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Image Gallery Next</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <img id='img' data-index='0'><button id='next'>Next</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11663,7 +11663,7 @@
     "id": "web-028",
     "title": "Rounded Button",
     "description": "Give #rbtn border-radius at least 8px.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rounded Button</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <button id='rbtn'>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11713,7 +11713,7 @@
     "id": "web-030",
     "title": "Zebra Table Rows",
     "description": "Color even rows #f0f0f0.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Zebra Table Rows</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <table id='tb'><tbody><tr><td>1</td></tr><tr><td>2</td></tr></tbody></table>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11763,7 +11763,7 @@
     "id": "web-032",
     "title": "Rotate Element",
     "description": "Rotate #rot by any angle.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Rotate Element</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='rot'>Rotate me</div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11813,7 +11813,7 @@
     "id": "web-033",
     "title": "Serialize Form",
     "description": "Implement serialize(form) => {name:value}.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Serialize Form</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <form id='f'><input name='a' value='1'><input name='b' value='2'></form>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11863,7 +11863,7 @@
     "id": "web-034",
     "title": "Letter Spacing",
     "description": "Set #h2 letter-spacing to 2px.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Letter Spacing</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h2 id='h2'>Spacing</h2>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11913,7 +11913,7 @@
     "id": "web-035",
     "title": "Text Shadow",
     "description": "Apply a non-none text-shadow to #ts.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Text Shadow</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <h3 id='ts'>Shadow</h3>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -11963,7 +11963,7 @@
     "id": "web-037",
     "title": "Use CSS Variable",
     "description": "Declare --gap:16px and apply to grid gap.",
-    "difficulty": 1,
+    "difficulty": 2,
     "category": "html-css",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Use CSS Variable</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <div id='g'><div>a</div><div>b</div></div>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -12013,7 +12013,7 @@
     "id": "web-038",
     "title": "Texts to Array",
     "description": "Collect all li text into array via texts(ul) and store on window.__arr.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Texts to Array</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <ul id='list'><li>a</li><li>b</li><li>c</li></ul>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -12063,7 +12063,7 @@
     "id": "web-039",
     "title": "Enable on Length",
     "description": "Implement isLongEnough(s,min) and enable #go if valid.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Enable on Length</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <input id='txt' value='hi'><button id='go' disabled>Go</button>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",
@@ -12113,7 +12113,7 @@
     "id": "web-040",
     "title": "Toggle Case",
     "description": "Implement toggleCase(s) and set #out to transformed string.",
-    "difficulty": 2,
+    "difficulty": 3,
     "category": "logic+dom",
     "scaffold": {
       "index.html": "<!doctype html>\n<html lang=\"en\">\n<head>\n  <meta charset=\"utf-8\">\n  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n  <title>Toggle Case</title>\n  <link rel=\"stylesheet\" href=\"style.css\">\n</head>\n<body>\n  <p id='out'></p>\n  <script src=\"script.js\"></script>\n</body>\n</html>\n",

@@ -49,17 +49,17 @@ export default function DashboardPage() {
     : '0.0';
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900 transition-colors">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 transition-colors">
         <div className="max-w-7xl mx-auto flex justify-between items-center">
           <div>
-            <h1 className="text-3xl font-bold text-gray-900">Dashboard</h1>
-            <p className="text-gray-600 mt-1">Track your learning progress</p>
+            <h1 className="text-3xl font-bold text-gray-900 dark:text-white transition-colors">Dashboard</h1>
+            <p className="text-gray-600 dark:text-gray-400 mt-1 transition-colors">Track your learning progress</p>
           </div>
           <Link
             href="/learn"
-            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700"
+            className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
           >
             Continue Learning
           </Link>
@@ -69,40 +69,40 @@ export default function DashboardPage() {
       <div className="max-w-7xl mx-auto px-6 py-8">
         {/* Stats Overview */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-sm text-gray-600 mb-1">Overall Mastery</p>
-            <p className="text-3xl font-bold text-gray-900">{overallMastery}</p>
-            <p className="text-xs text-gray-500 mt-1">600 - 1800 scale</p>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 transition-colors">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1 transition-colors">Overall Mastery</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-white transition-colors">{overallMastery}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 transition-colors">600 - 1800 scale</p>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-sm text-gray-600 mb-1">Total Attempts</p>
-            <p className="text-3xl font-bold text-gray-900">{totalAttempts}</p>
-            <p className="text-xs text-gray-500 mt-1">{totalSuccesses} successful</p>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 transition-colors">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1 transition-colors">Total Attempts</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-white transition-colors">{totalAttempts}</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 transition-colors">{totalSuccesses} successful</p>
           </div>
 
-          <div className="bg-white rounded-lg shadow p-6">
-            <p className="text-sm text-gray-600 mb-1">Success Rate</p>
-            <p className="text-3xl font-bold text-gray-900">{overallSuccessRate}%</p>
-            <p className="text-xs text-gray-500 mt-1">Across all concepts</p>
+          <div className="bg-white dark:bg-gray-800 rounded-lg shadow p-6 transition-colors">
+            <p className="text-sm text-gray-600 dark:text-gray-400 mb-1 transition-colors">Success Rate</p>
+            <p className="text-3xl font-bold text-gray-900 dark:text-white transition-colors">{overallSuccessRate}%</p>
+            <p className="text-xs text-gray-500 dark:text-gray-400 mt-1 transition-colors">Across all concepts</p>
           </div>
         </div>
 
         {/* Concept Progress */}
-        <div className="bg-white rounded-lg shadow">
-          <div className="px-6 py-4 border-b border-gray-200">
-            <h2 className="text-xl font-bold text-gray-900">Concept Mastery</h2>
+        <div className="bg-white dark:bg-gray-800 rounded-lg shadow transition-colors">
+          <div className="px-6 py-4 border-b border-gray-200 dark:border-gray-700 transition-colors">
+            <h2 className="text-xl font-bold text-gray-900 dark:text-white transition-colors">Concept Mastery</h2>
           </div>
 
           <div className="p-6">
             {loading ? (
-              <p className="text-center text-gray-600 py-8">Loading progress...</p>
+              <p className="text-center text-gray-600 dark:text-gray-400 py-8 transition-colors">Loading progress...</p>
             ) : progress.length === 0 ? (
               <div className="text-center py-8">
-                <p className="text-gray-600 mb-4">No progress yet</p>
+                <p className="text-gray-600 dark:text-gray-400 mb-4 transition-colors">No progress yet</p>
                 <Link
                   href="/learn"
-                  className="text-blue-600 hover:underline"
+                  className="text-blue-600 dark:text-blue-400 hover:underline transition-colors"
                 >
                   Start your first task →
                 </Link>
@@ -115,7 +115,7 @@ export default function DashboardPage() {
                       mastery={item.mastery}
                       conceptName={item.concept}
                     />
-                    <div className="flex justify-between text-xs text-gray-500">
+                    <div className="flex justify-between text-xs text-gray-500 dark:text-gray-400 transition-colors">
                       <span>{item.attempts} attempts</span>
                       <span>{item.successRate}% success rate</span>
                     </div>

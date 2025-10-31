@@ -102,7 +102,7 @@ export function ChatPanel({ host, contextBuilder, onTestResult }: ChatPanelProps
   };
 
   return (
-    <div className="flex flex-col h-full bg-gray-50">
+    <div className="flex flex-col h-full bg-gray-50 dark:bg-gray-900 transition-colors">
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-4 space-y-3">
         {messages.map(msg => (
@@ -111,12 +111,12 @@ export function ChatPanel({ host, contextBuilder, onTestResult }: ChatPanelProps
             className={`flex ${msg.type === "user" ? "justify-end" : "justify-start"}`}
           >
             <div
-              className={`max-w-[80%] rounded-lg px-4 py-2 ${
+              className={`max-w-[80%] rounded-lg px-4 py-2 transition-colors ${
                 msg.type === "user"
                   ? "bg-blue-600 text-white"
                   : msg.type === "system"
-                  ? "bg-gray-200 text-gray-700 text-sm italic"
-                  : "bg-white text-gray-900 shadow-sm border border-gray-200"
+                  ? "bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 text-sm italic"
+                  : "bg-white dark:bg-gray-800 text-gray-900 dark:text-white shadow-sm border border-gray-200 dark:border-gray-700"
               }`}
             >
               <p className="whitespace-pre-wrap">{msg.text}</p>
@@ -125,11 +125,11 @@ export function ChatPanel({ host, contextBuilder, onTestResult }: ChatPanelProps
         ))}
         {isLoading && (
           <div className="flex justify-start">
-            <div className="bg-white rounded-lg px-4 py-2 shadow-sm border border-gray-200">
+            <div className="bg-white dark:bg-gray-800 rounded-lg px-4 py-2 shadow-sm border border-gray-200 dark:border-gray-700 transition-colors">
               <div className="flex space-x-2">
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce" />
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-100" />
-                <div className="w-2 h-2 bg-gray-400 rounded-full animate-bounce delay-200" />
+                <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce" />
+                <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce delay-100" />
+                <div className="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full animate-bounce delay-200" />
               </div>
             </div>
           </div>
@@ -138,7 +138,7 @@ export function ChatPanel({ host, contextBuilder, onTestResult }: ChatPanelProps
       </div>
 
       {/* Input */}
-      <div className="border-t border-gray-300 p-4 bg-white">
+      <div className="border-t border-gray-300 dark:border-gray-700 p-4 bg-white dark:bg-gray-800 transition-colors">
         <div className="flex gap-2">
           <textarea
             value={input}
@@ -146,18 +146,18 @@ export function ChatPanel({ host, contextBuilder, onTestResult }: ChatPanelProps
             onKeyDown={handleKeyDown}
             placeholder="Ask for help or describe what you want to do..."
             disabled={isLoading}
-            className="flex-1 resize-none border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100"
+            className="flex-1 resize-none border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-900 text-gray-900 dark:text-white rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:bg-gray-100 dark:disabled:bg-gray-800 transition-colors placeholder:text-gray-500 dark:placeholder:text-gray-400"
             rows={2}
           />
           <button
             onClick={handleSend}
             disabled={isLoading || !input.trim()}
-            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 disabled:cursor-not-allowed font-medium"
+            className="px-6 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 disabled:bg-gray-400 dark:disabled:bg-gray-700 disabled:cursor-not-allowed font-medium transition-colors"
           >
             Send
           </button>
         </div>
-        <p className="text-xs text-gray-500 mt-2">
+        <p className="text-xs text-gray-500 dark:text-gray-400 mt-2 transition-colors">
           Press Enter to send, Shift+Enter for new line
         </p>
       </div>

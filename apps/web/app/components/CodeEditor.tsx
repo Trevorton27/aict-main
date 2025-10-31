@@ -9,13 +9,17 @@ interface CodeEditorProps {
   onFilesChange: (files: Record<string, string>) => void;
   activePath?: string;
   onActivePathChange?: (path: string) => void;
+  onRunTests?: () => void;
+  isTestRunning?: boolean;
 }
 
 export function CodeEditor({
   files,
   onFilesChange,
   activePath,
-  onActivePathChange
+  onActivePathChange,
+  onRunTests,
+  isTestRunning = false
 }: CodeEditorProps) {
   const [openPath, setOpenPath] = useState<string>(
     activePath || Object.keys(files)[0] || ""
@@ -56,22 +60,33 @@ export function CodeEditor({
   };
 
   return (
-    <div className="flex flex-col h-full bg-gray-900">
-      {/* File Tabs */}
-      <div className="flex bg-gray-800 border-b border-gray-700 overflow-x-auto">
-        {fileList.map(path => (
+    <div className="flex flex-col h-full bg-gray-900 dark:bg-gray-950">
+      {/* File Tabs with Run Tests Button */}
+      <div className="flex items-center justify-between bg-light-header-end dark:bg-gray-900 border-b border-light-border dark:border-gray-800 p-2 gap-2">
+        <div className="flex overflow-x-auto gap-1">
+          {fileList.map(path => (
+            <button
+              key={path}
+              onClick={() => switchFile(path)}
+              className={`px-4 py-2 text-sm font-semibold whitespace-nowrap rounded-lg transition-all duration-150 ${
+                openPath === path
+                  ? "bg-gradient-to-r from-accent-purple-light to-accent-indigo dark:bg-gray-950 text-white shadow-button-light"
+                  : "text-text-light-body dark:text-gray-400 hover:text-text-light-heading dark:hover:text-gray-200 hover:bg-white dark:hover:bg-gray-800 border border-light-border dark:border-gray-700"
+              }`}
+            >
+              {path.split("/").pop()}
+            </button>
+          ))}
+        </div>
+        {onRunTests && (
           <button
-            key={path}
-            onClick={() => switchFile(path)}
-            className={`px-4 py-2 text-sm font-medium whitespace-nowrap border-r border-gray-700 ${
-              openPath === path
-                ? "bg-gray-900 text-white"
-                : "text-gray-400 hover:text-gray-200 hover:bg-gray-700"
-            }`}
+            onClick={onRunTests}
+            disabled={isTestRunning}
+            className="px-4 py-2 mr-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-400 font-medium whitespace-nowrap transition-colors"
           >
-            {path.split("/").pop()}
+            {isTestRunning ? "Running..." : "Run Tests"}
           </button>
-        ))}
+        )}
       </div>
 
       {/* Editor */}
@@ -95,7 +110,7 @@ export function CodeEditor({
             }}
           />
         ) : (
-          <div className="flex items-center justify-center h-full text-gray-500">
+          <div className="flex items-center justify-center h-full text-gray-500 dark:text-gray-400">
             No file selected
           </div>
         )}

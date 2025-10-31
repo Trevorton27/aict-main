@@ -51,7 +51,19 @@ export default function LearnPage() {
   const [attemptCount, setAttemptCount] = useState(0);
   const REQUIRED_ATTEMPTS = 3;
 
-  
+  // ---------- Preview collapse state ----------
+  const [isPreviewCollapsed, setIsPreviewCollapsed] = useState(false);
+
+  // ---------- Preview theme state (independent of main app theme) ----------
+  const [previewTheme, setPreviewTheme] = useState<'light' | 'dark'>('light');
+
+  // ---------- AI Chat popup state ----------
+  const [isAIChatOpen, setIsAIChatOpen] = useState(false);
+
+  // ---------- Challenges list collapse state ----------
+  const [isChallengesCollapsed, setIsChallengesCollapsed] = useState(false);
+
+
   // ---------- Variant Generation ----------
   async function loadVariantForCurrent() {
     if (!currentTask) return;
@@ -271,66 +283,26 @@ export default function LearnPage() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gray-100">
+    <div className="h-screen flex flex-col bg-gray-100 dark:bg-gray-900 overflow-hidden transition-colors">
       {/* Header */}
-      <header className="bg-white border-b border-gray-200 px-6 py-4">
+      <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex-shrink-0 transition-colors">
         <div className="flex items-center justify-between gap-4">
           <div>
-            <h1 className="text-2xl font-bold text-gray-900">AI Coding Tutor</h1>
+            <h1 className="text-2xl font-bold text-gray-900 dark:text-white">AI Coding Tutor</h1>
             {currentTask && (
-              <p className="text-sm text-gray-600 mt-1">{currentTask.title}</p>
+              <p className="text-sm text-gray-600 dark:text-gray-400 mt-1">{currentTask.title}</p>
             )}
           </div>
 
-          {/* Level + Challenge pickers */}
+          {/* Level Controls */}
           <div className="flex items-center gap-3">
             <button
               onClick={loadVariantForCurrent}
               className="px-3 py-2 rounded-md bg-indigo-600 text-white text-sm hover:bg-indigo-700"
               title="Generate an AI-themed variation of this challenge (tests stay the same)"
             >
-              New Variant 🎨
+            Generate AI Variant Of Challenge🎨
             </button>
-            <div className="flex items-center gap-2">
-              <label className="text-sm text-gray-600 font-medium">Level</label>
-              <select
-                value={difficulty}
-                onChange={(e) => setDifficulty(parseInt(e.target.value))}
-                className="border border-gray-300 rounded-md px-3 py-1.5 text-sm font-medium bg-white hover:border-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500"
-              >
-                <option value={1}>Level 1: HTML</option>
-                <option value={2}>Level 2: HTML + CSS</option>
-                <option value={3}>Level 3: JavaScript</option>
-                <option value={4}>Level 4: Full Stack</option>
-              </select>
-            </div>
-
-            <div className="flex items-center gap-2">
-              <label className="text-sm text-gray-600">Challenge</label>
-              <select
-                value={currentTask?.id ?? ""}
-                onChange={(e) => {
-                  const t = taskList.find((x) => x.id === e.target.value);
-                  if (!t) return;
-                  setCurrentTask(t);
-                  setEditorFiles(t.scaffold);
-                  setActivePath(
-                    Object.keys(t.scaffold)[0] || "index.html"
-                  );
-                  setAttemptCount(0);
-                }}
-                className="border border-gray-300 rounded-md p-1 text-sm min-w-[240px]"
-              >
-                <option value="" disabled>
-                  {taskList.length ? "Select challenge…" : "No tasks for level"}
-                </option>
-                {taskList.map((t) => (
-                  <option key={t.id} value={t.id}>
-                    {t.title}
-                  </option>
-                ))}
-              </select>
-            </div>
 
             <button
               onClick={() => setShowSolutionModal(true)}
@@ -355,14 +327,6 @@ export default function LearnPage() {
               )}
             </button>
 
-            <button
-              onClick={handleRunTests}
-              disabled={isTestRunning}
-              className="px-4 py-2 bg-green-600 text-white rounded-lg hover:bg-green-700 disabled:bg-gray-400 font-medium"
-            >
-              {isTestRunning ? "Running..." : "Run Tests"}
-            </button>
-
             {/* Attempt Progress Indicator */}
             <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200">
               <span className="text-xs font-medium text-gray-600">Attempts:</span>
@@ -385,11 +349,77 @@ export default function LearnPage() {
         </div>
       </header>
 
+      {/* Test Results Banner */}
+      {testResult && (
+        <div className={`border-b transition-colors ${
+          testResult.passed
+            ? 'bg-green-50 dark:bg-green-900/20 border-green-200 dark:border-green-800'
+            : 'bg-red-50 dark:bg-red-900/20 border-red-200 dark:border-red-800'
+        }`}>
+          <div className="px-6 py-3">
+            <div className="flex items-center justify-between">
+              <div className="flex items-center gap-3">
+                <span className="text-2xl">{testResult.passed ? "✅" : "❌"}</span>
+                <div>
+                  <p className={`font-semibold transition-colors ${
+                    testResult.passed
+                      ? 'text-green-800 dark:text-green-200'
+                      : 'text-red-800 dark:text-red-200'
+                  }`}>
+                    {testResult.passed ? "All tests passed! 🎉" : "Some tests failed"}
+                  </p>
+                  <p className={`text-sm transition-colors ${
+                    testResult.passed
+                      ? 'text-green-700 dark:text-green-300'
+                      : 'text-red-700 dark:text-red-300'
+                  }`}>
+                    {testResult.passedIds.length} / {testResult.passedIds.length + testResult.failedIds.length} tests passed
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => setTestResult(null)}
+                className={`text-sm px-3 py-1 rounded transition-colors ${
+                  testResult.passed
+                    ? 'text-green-700 dark:text-green-300 hover:bg-green-100 dark:hover:bg-green-900/40'
+                    : 'text-red-700 dark:text-red-300 hover:bg-red-100 dark:hover:bg-red-900/40'
+                }`}
+              >
+                Dismiss
+              </button>
+            </div>
+
+            {/* Test Details - Only show if there are failed tests */}
+            {!testResult.passed && (
+              <div className="mt-3 space-y-2">
+                {testResult.failedIds.map((testId: string) => {
+                  const message = testResult.messages[testId];
+                  const label = testResult.testLabels?.[testId] || testId;
+                  return (
+                    <div key={testId} className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-red-200 dark:border-red-800 transition-colors">
+                      <div className="flex items-start gap-2">
+                        <span className="text-lg">❌</span>
+                        <div className="flex-1">
+                          <p className="font-medium text-gray-900 dark:text-white text-sm transition-colors">{label}</p>
+                          {message && (
+                            <p className="text-sm mt-1 text-red-700 dark:text-red-300 transition-colors">{message}</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
+              </div>
+            )}
+          </div>
+        </div>
+      )}
+
       {/* Main Layout */}
       <div className="flex-1 flex overflow-hidden">
-        {/* Left Sidebar: Challenge Details & AI Helper */}
-        <div className="w-96 border-r border-gray-200 flex flex-col">
-          {/* Challenge Details - Takes most space */}
+        {/* Left Sidebar: Challenge Details */}
+        <div className="w-[480px] border-r border-light-border dark:border-gray-700 bg-light-panel dark:bg-gray-800 flex flex-col transition-colors">
+          {/* Challenge Details - Takes full space */}
           <div className="flex-1 overflow-hidden">
             {currentTask && (
               <ChallengeDetails
@@ -400,52 +430,197 @@ export default function LearnPage() {
               />
             )}
           </div>
-
-          {/* AI Tutor Helper - Fixed at bottom */}
-          <div className="border-t border-gray-200 p-4 bg-white">
-            <AITutorHelper
-              onAskForHint={handleAskForHint}
-              onAskQuestion={handleAskQuestion}
-            />
-          </div>
         </div>
 
         {/* Middle: Editor + Preview */}
-        <div className="flex-1 flex overflow-hidden">
-          <div className="flex-1 border-r border-gray-200">
+        <div className="flex-1 flex overflow-hidden relative">
+          {/* Editor - Expands when preview is collapsed */}
+          <div
+            className="border-r border-gray-200 transition-all duration-300"
+            style={{
+              width: isPreviewCollapsed ? '100%' : '50%'
+            }}
+          >
             <CodeEditor
               files={editorFiles}
               onFilesChange={setEditorFiles}
               activePath={activePath}
               onActivePathChange={setActivePath}
+              onRunTests={handleRunTests}
+              isTestRunning={isTestRunning}
             />
           </div>
-          <div className="flex-1">
-            <PreviewSandbox files={editorFiles} refreshTrigger={refreshTrigger} />
+          {/* Preview - Completely hidden when collapsed */}
+          <div
+            className="transition-all duration-300 flex flex-col"
+            style={{
+              width: isPreviewCollapsed ? '0%' : '50%',
+              overflow: isPreviewCollapsed ? 'hidden' : 'visible',
+              height: '100%'
+            }}
+          >
+            {!isPreviewCollapsed && (
+              <PreviewSandbox
+                files={editorFiles}
+                refreshTrigger={refreshTrigger}
+                isCollapsed={isPreviewCollapsed}
+                onCollapseChange={setIsPreviewCollapsed}
+              />
+            )}
           </div>
+          {/* Expand Preview Button - Shows when preview is collapsed */}
+          {isPreviewCollapsed && (
+            <button
+              onClick={() => setIsPreviewCollapsed(false)}
+              className="absolute bottom-4 right-4 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-lg shadow-lg font-medium transition-all flex items-center gap-2 z-50"
+              title="Expand preview panel"
+            >
+              <span>👁️</span>
+              <span>Show Preview</span>
+            </button>
+          )}
         </div>
 
-        {/* Right: Chat & Tests */}
-        <div className="w-96 border-l border-gray-200 flex flex-col">
-          {/* Chat Panel - Top half */}
-          <div className="flex-1 border-b border-gray-200 overflow-hidden">
+        {/* Right Sidebar: Challenges List */}
+        <div className={`border-l border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 flex flex-col transition-all duration-300 ${isChallengesCollapsed ? 'w-12' : 'w-80'}`}>
+          {/* Header with Collapse Toggle */}
+          <div className="bg-gray-100 dark:bg-gray-700 border-b border-gray-200 dark:border-gray-600 px-3 py-3 flex items-center justify-between transition-colors">
+            {!isChallengesCollapsed && (
+              <h3 className="font-semibold text-gray-800 dark:text-white">Challenges</h3>
+            )}
+            <button
+              onClick={() => setIsChallengesCollapsed(!isChallengesCollapsed)}
+              className="text-gray-600 dark:text-gray-300 hover:text-gray-900 dark:hover:text-white ml-auto"
+              title={isChallengesCollapsed ? "Expand challenges list" : "Collapse challenges list"}
+            >
+              {isChallengesCollapsed ? '◀' : '▶'}
+            </button>
+          </div>
+
+          {/* Level Selector */}
+          {!isChallengesCollapsed && (
+            <div className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-600 px-3 py-3 transition-colors">
+              <label className="text-xs text-gray-600 dark:text-gray-400 font-medium mb-1 block">Level</label>
+              <select
+                value={difficulty}
+                onChange={(e) => setDifficulty(parseInt(e.target.value))}
+                className="w-full border border-gray-300 dark:border-gray-600 rounded-md px-3 py-2 text-sm font-medium bg-white dark:bg-gray-700 text-gray-900 dark:text-white hover:border-gray-400 dark:hover:border-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-colors"
+              >
+                <option value={1}>Level 1: HTML</option>
+                <option value={2}>Level 2: HTML + CSS</option>
+                <option value={3}>Level 3: JavaScript</option>
+                <option value={4}>Level 4: Full Stack</option>
+              </select>
+            </div>
+          )}
+
+          {/* Challenges List - Scrollable */}
+          {!isChallengesCollapsed && (
+            <div className="flex-1 overflow-y-auto">
+              <div className="p-2">
+                {taskList.map((task, index) => (
+                  <button
+                    key={task.id}
+                    onClick={() => {
+                      setCurrentTask(task);
+                      setEditorFiles(task.scaffold);
+                      setActivePath(Object.keys(task.scaffold)[0] || "index.html");
+                      setAttemptCount(0);
+                    }}
+                    className={`w-full text-left px-3 py-2 md:py-4 rounded-md transition-colors text-sm border-b border-gray-300 dark:border-gray-700 ${
+                      currentTask?.id === task.id
+                        ? 'bg-blue-100 dark:bg-blue-900 border-l-4 border-blue-600 font-medium'
+                        : 'hover:bg-gray-100 dark:hover:bg-gray-700'
+                    }`}
+                  >
+                    <div className="flex items-start gap-2">
+                      <span className="text-xs text-gray-500 dark:text-gray-400 mt-0.5" style={{fontWeight: 370}}>
+                        {index + 1}
+                      </span>
+                      <div className="flex-1">
+                        <div className="text-gray-900 dark:text-white" style={{fontWeight: 370}}>
+                          {task.title}
+                        </div>
+                      </div>
+                    </div>
+                  </button>
+                ))}
+              </div>
+            </div>
+          )}
+
+          {/* Collapsed State - Vertical Text */}
+          {isChallengesCollapsed && (
+            <div className="flex-1 flex items-center justify-center">
+              <div className="transform -rotate-90 whitespace-nowrap text-sm font-medium text-gray-600 dark:text-gray-400">
+                CHALLENGES
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Floating AI Chat Toggle Button */}
+      {!isAIChatOpen && (
+        <button
+          onClick={() => setIsAIChatOpen(true)}
+          className="fixed bottom-6 right-6 bg-purple-600 hover:bg-purple-700 text-white rounded-full shadow-lg flex items-center gap-3 px-5 py-3 transition-all z-40 group"
+          title="AI Tutor Help"
+        >
+          <span className="text-2xl">💬</span>
+          <span className="font-medium text-sm">Ask AI Tutor for help</span>
+        </button>
+      )}
+
+      {/* Floating AI Chat Popup */}
+      {isAIChatOpen && (
+        <div className="fixed bottom-24 right-6 w-96 h-[600px] bg-white dark:bg-gray-800 rounded-lg shadow-2xl border border-gray-300 dark:border-gray-600 flex flex-col z-40 transition-colors">
+          {/* Header */}
+          <div className="bg-purple-600 dark:bg-purple-700 text-white px-4 py-3 rounded-t-lg flex items-center justify-between">
+            <div className="flex items-center gap-2">
+              <span className="text-xl">🤖</span>
+              <h3 className="font-semibold">AI Tutor</h3>
+            </div>
+            <button
+              onClick={() => setIsAIChatOpen(false)}
+              className="text-white hover:text-gray-200 text-xl font-bold"
+            >
+              ×
+            </button>
+          </div>
+
+          {/* AI Tutor Helper - Quick Actions */}
+          <div className="border-b border-gray-200 dark:border-gray-600 p-4 bg-gray-50 dark:bg-gray-700 transition-colors">
+            <AITutorHelper
+              onAskForHint={handleAskForHint}
+              onAskQuestion={handleAskQuestion}
+            />
+          </div>
+
+          {/* Chat Panel */}
+          <div className="flex-1 overflow-hidden">
             <ChatPanel
               host={hostCapabilities}
               contextBuilder={buildContext}
               onTestResult={setTestResult}
             />
           </div>
+        </div>
+      )}
 
-          {/* Test Panel - Bottom half */}
-          <div className="flex-1 overflow-hidden">
-            <TestPanel
-              result={testResult}
-              onRunTests={handleRunTests}
-              isRunning={isTestRunning}
-            />
+      {/* Footer */}
+      <footer className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 px-6 py-3 flex-shrink-0 transition-colors">
+        <div className="flex items-center justify-between text-sm text-gray-600 dark:text-gray-400">
+          <div>
+            AI Coding Tutor © 2025
+          </div>
+          <div className="flex items-center gap-4">
+            <span>Level {difficulty}</span>
+            <span>•</span>
+            <span>{taskList.length} Challenges</span>
           </div>
         </div>
-      </div>
+      </footer>
 
       {/* Solution Modal */}
       {currentTask?.solution && (
