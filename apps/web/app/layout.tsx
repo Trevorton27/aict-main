@@ -34,7 +34,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang="en">
+    <html lang="en" className={isDarkMode ? 'dark' : ''}>
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
@@ -51,13 +51,7 @@ export default function RootLayout({
               </a>
               <div className="flex gap-2 items-center">
                 <a href="/learn" className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
-                  Learn
-                </a>
-                <a href="/tasks" className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
-                  Tasks
-                </a>
-                <a href="/dashboard" className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
-                  Dashboard
+                  Try the AI tutor
                 </a>
                 <div className="w-px h-6 bg-light-border dark:bg-dark-700 mx-2"></div>
                 <button
