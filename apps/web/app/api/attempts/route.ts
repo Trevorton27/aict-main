@@ -1,7 +1,7 @@
 // apps/web/app/api/attempts/route.ts
 import { NextRequest, NextResponse } from 'next/server';
 import { auth } from '@clerk/nextjs/server';
-import { prisma } from '@/packages/database/src/client';
+import { prisma } from '@/lib/server-db';
 
 export async function POST(req: NextRequest) {
   try {
