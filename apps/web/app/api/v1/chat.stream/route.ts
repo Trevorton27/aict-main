@@ -68,7 +68,7 @@ function buildSystemPrompt() {
 }
 function toCitations(snips: any[]) {
   if (!snips.length) return "";
-  const cites = snips.map(s => `- ${s.lessonId ? \`lesson-\${s.lessonId}\` : (s.uri || s.id)}`).join("\n");
+  const cites = snips.map(s => `- ${s.lessonId ? `lesson-${s.lessonId}` : (s.uri || s.id)}`).join("\n");
   const body  = snips.map(s => s.text).join("\n---\n");
   return `# 参照スニペット\n${body}\n\n(引用元:\n${cites}\n)`;
 }
