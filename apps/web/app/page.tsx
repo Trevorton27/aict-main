@@ -1,7 +1,11 @@
 // apps/web/app/page.tsx
+"use client";
+
 import Link from 'next/link';
+import { useState } from 'react';
 
 export default function HomePage() {
+  const [showModal, setShowModal] = useState(false);
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
       {/* Hero Section */}
@@ -13,12 +17,12 @@ export default function HomePage() {
           Start your journey in web development with interactive coding challenges and an AI tutor to help you along the way.
         </p>
         <div className="flex gap-4 justify-center">
-          <Link
-            href="/learn"
+          <button
+            onClick={() => setShowModal(true)}
             className="px-8 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium text-lg transition-colors"
           >
-            Try the AI tutor
-          </Link>
+            Give it a try
+          </button>
         </div>
       </header>
 
@@ -136,6 +140,87 @@ export default function HomePage() {
           </a>
         </div>
       </section>
+
+      {/* Sign-up Modal */}
+      {showModal && (
+        <div
+          className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            className="bg-white dark:bg-gray-800 rounded-lg shadow-xl max-w-md w-full p-6 transition-colors"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <div className="flex justify-between items-start mb-4">
+              <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
+                Welcome to AI Coding Tutor
+              </h3>
+              <button
+                onClick={() => setShowModal(false)}
+                className="text-gray-400 hover:text-gray-600 dark:hover:text-gray-200 text-2xl leading-none"
+              >
+                &times;
+              </button>
+            </div>
+
+            <div className="space-y-4 mb-6">
+              <p className="text-gray-600 dark:text-gray-300">
+                Creating an account unlocks powerful features:
+              </p>
+              <ul className="space-y-2 text-gray-600 dark:text-gray-300">
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Track your progress across challenges</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Help train the AI tutor to become more effective</span>
+                </li>
+                <li className="flex items-start gap-2">
+                  <span className="text-green-500 mt-1">✓</span>
+                  <span>Save your work and return anytime</span>
+                </li>
+              </ul>
+
+              <div className="bg-blue-50 dark:bg-gray-700 p-3 rounded-lg">
+                <p className="text-sm text-gray-700 dark:text-gray-200">
+                  <strong>Privacy first:</strong> We don't collect or share personal information.
+                  You won't receive any solicitations.
+                </p>
+              </div>
+            </div>
+
+            <div className="space-y-3">
+              <Link
+                href="/sign-up"
+                className="block w-full px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 font-medium text-center transition-colors"
+              >
+                Create Free Account
+              </Link>
+
+              <div className="relative">
+                <div className="absolute inset-0 flex items-center">
+                  <div className="w-full border-t border-gray-300 dark:border-gray-600"></div>
+                </div>
+                <div className="relative flex justify-center text-sm">
+                  <span className="px-2 bg-white dark:bg-gray-800 text-gray-500">or</span>
+                </div>
+              </div>
+
+              <Link
+                href="/learn"
+                className="block w-full px-6 py-3 bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-200 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 font-medium text-center transition-colors"
+              >
+                Try Without Account
+              </Link>
+
+              <p className="text-xs text-center text-gray-500 dark:text-gray-400">
+                Note: Progress won't be saved without an account
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import { useUser, UserButton, SignedIn } from "@clerk/nextjs";
 import { ChatPanel } from "../components/ChatPanel";
 import { CodeEditor } from "../components/CodeEditor";
 import { PreviewSandbox } from "../components/PreviewSandbox";
@@ -35,6 +36,9 @@ interface Task {
 }
 
 export default function LearnPage() {
+  // ---------- Clerk user ----------
+  const { user, isLoaded } = useUser();
+
   // ---------- Core state ----------
   const [currentTask, setCurrentTask] = useState<Task | null>(null);
   const [editorFiles, setEditorFiles] = useState<Record<string, string>>({});
@@ -52,7 +56,7 @@ export default function LearnPage() {
   const REQUIRED_ATTEMPTS = 3;
 
   // ---------- Preview collapse state ----------
-  const [isPreviewCollapsed, setIsPreviewCollapsed] = useState(false);
+  const [isPreviewCollapsed, setIsPreviewCollapsed] = useState(true);
 
   // ---------- Preview theme state (independent of main app theme) ----------
   const [previewTheme, setPreviewTheme] = useState<'light' | 'dark'>('light');
@@ -80,6 +84,48 @@ export default function LearnPage() {
         setActivePath(Object.keys(data.task.scaffold)[0] || "index.html");
       }
     } catch (e) { console.error('variant error', e); }
+  }
+
+  // ---------- Save Attempt to Database ----------
+  async function saveAttemptToDatabase(result: any) {
+    if (!user || !currentTask || !result) return;
+
+    try {
+      const passed = result.passed || result.success || false;
+      const passedTests = result.passed_tests || result.passedTests || [];
+      const failedTests = result.failed_tests || result.failedTests || [];
+
+      await fetch('/api/attempts', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          taskId: currentTask.id,
+          challengeId: currentTask.id,
+          code: editorFiles,
+          passed,
+          passedTests,
+          failedTests,
+          hintsUsed: 0, // TODO: Track this in state
+          maxHintLevel: 0, // TODO: Track this in state
+        }),
+      });
+
+      // Also update mastery score if challenge has tags/concepts
+      if (currentTask.category) {
+        await fetch('/api/mastery', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            userId: user.id,
+            tags: [currentTask.category],
+            result: passed ? 'pass' : 'fail',
+          }),
+        });
+      }
+    } catch (error) {
+      console.error('Error saving attempt:', error);
+      // Don't block the UI if save fails
+    }
   }
 
   // ---------- Solution modal state ----------
@@ -256,6 +302,11 @@ export default function LearnPage() {
 
       // Increment attempt count after running tests
       setAttemptCount(prev => prev + 1);
+
+      // Save attempt to database (only if user is logged in)
+      if (user) {
+        await saveAttemptToDatabase(result);
+      }
     } catch (error) {
       console.error("Test run failed:", error);
     } finally {
@@ -328,23 +379,30 @@ export default function LearnPage() {
             </button>
 
             {/* Attempt Progress Indicator */}
-            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 rounded-lg border border-gray-200">
-              <span className="text-xs font-medium text-gray-600">Attempts:</span>
+            <div className="flex items-center gap-2 px-3 py-2 bg-gray-50 dark:bg-gray-700 rounded-lg border border-gray-200 dark:border-gray-600">
+              <span className="text-xs font-medium text-gray-600 dark:text-gray-300">Attempts:</span>
               <div className="flex gap-1">
                 {Array.from({ length: REQUIRED_ATTEMPTS }).map((_, i) => (
                   <div
                     key={i}
                     className={`w-2 h-2 rounded-full transition-colors ${
-                      i < attemptCount ? 'bg-green-500' : 'bg-gray-300'
+                      i < attemptCount ? 'bg-green-500' : 'bg-gray-300 dark:bg-gray-600'
                     }`}
                     title={i < attemptCount ? `Attempt ${i + 1} completed` : `Attempt ${i + 1} pending`}
                   />
                 ))}
               </div>
-              <span className="text-xs font-semibold text-gray-700">
+              <span className="text-xs font-semibold text-gray-700 dark:text-gray-200">
                 {attemptCount}/{REQUIRED_ATTEMPTS}
               </span>
             </div>
+
+            {/* User Profile */}
+            <SignedIn>
+              <div className="ml-2">
+                <UserButton afterSignOutUrl="/" />
+              </div>
+            </SignedIn>
           </div>
         </div>
       </header>

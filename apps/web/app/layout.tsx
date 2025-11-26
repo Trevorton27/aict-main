@@ -52,12 +52,8 @@ export default function RootLayout({
                   <span>AI Coding Tutor</span>
                 </a>
                 <div className="flex gap-2 items-center">
-                  <a href="/learn" className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
-                    Try the AI tutor
-                  </a>
-                  <div className="w-px h-6 bg-light-border dark:bg-dark-700 mx-2"></div>
                   <SignedOut>
-                    <SignInButton mode="modal">
+                    <SignInButton mode="modal" forceRedirectUrl="/learn" signUpForceRedirectUrl="/learn">
                       <button className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
                         Sign In
                       </button>
