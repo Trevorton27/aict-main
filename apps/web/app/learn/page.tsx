@@ -67,6 +67,21 @@ export default function LearnPage() {
   // ---------- Challenges list collapse state ----------
   const [isChallengesCollapsed, setIsChallengesCollapsed] = useState(false);
 
+  // ---------- Error details expansion state ----------
+  const [expandedErrors, setExpandedErrors] = useState<Set<string>>(new Set());
+
+  const toggleErrorExpanded = (testId: string) => {
+    setExpandedErrors(prev => {
+      const next = new Set(prev);
+      if (next.has(testId)) {
+        next.delete(testId);
+      } else {
+        next.add(testId);
+      }
+      return next;
+    });
+  };
+
 
   // ---------- Variant Generation ----------
   async function loadVariantForCurrent() {
@@ -245,12 +260,30 @@ export default function LearnPage() {
     runTestsApi: async (payload: any) => {
       setIsTestRunning(true);
       try {
-        const res = await fetch("/api/eval", {
+        // Determine evaluation endpoint based on challenge type
+        // If challenge has HTML or CSS files → use JSDOM
+        // If challenge only has JS files → use JDoodle
+        const files = payload.files || {};
+        const fileKeys = Object.keys(files);
+
+        const hasHTML = fileKeys.some(key => key.endsWith('.html'));
+        const hasCSS = fileKeys.some(key => key.endsWith('.css'));
+        const isDOMChallenge = hasHTML || hasCSS;
+
+        const evalEndpoint = isDOMChallenge ? "/api/eval" : "/api/eval-jdoodle";
+
+        console.log(`Running tests via ${evalEndpoint}`);
+
+        const res = await fetch(evalEndpoint, {
           method: "POST",
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify(payload),
         });
         const result = await res.json();
+
+        // Log test results payload in browser console
+        console.log('Test Results Payload:', result);
+
         return result;
       } finally {
         setIsTestRunning(false);
@@ -453,16 +486,98 @@ export default function LearnPage() {
                 {testResult.failedIds.map((testId: string) => {
                   const message = testResult.messages[testId];
                   const label = testResult.testLabels?.[testId] || testId;
+                  const errorDetail = testResult.errorDetails?.[testId];
+                  const isExpanded = expandedErrors.has(testId);
+                  const hasErrorDetails = errorDetail && (errorDetail.stderr || errorDetail.stackTrace || errorDetail.consoleOutput?.length > 0 || errorDetail.domState);
+
                   return (
-                    <div key={testId} className="bg-white dark:bg-gray-800 rounded-lg p-3 border border-red-200 dark:border-red-800 transition-colors">
-                      <div className="flex items-start gap-2">
-                        <span className="text-lg">❌</span>
-                        <div className="flex-1">
-                          <p className="font-medium text-gray-900 dark:text-white text-sm transition-colors">{label}</p>
-                          {message && (
-                            <p className="text-sm mt-1 text-red-700 dark:text-red-300 transition-colors">{message}</p>
+                    <div key={testId} className="bg-white dark:bg-gray-800 rounded-lg border border-red-200 dark:border-red-800 transition-colors">
+                      <div className="p-3">
+                        <div className="flex items-start gap-2">
+                          <span className="text-lg flex-shrink-0">❌</span>
+                          <div className="flex-1 min-w-0">
+                            <p className="font-medium text-gray-900 dark:text-white text-sm transition-colors">{label}</p>
+                            {message && (
+                              <p className="text-sm mt-1 text-red-700 dark:text-red-300 transition-colors">{message}</p>
+                            )}
+                          </div>
+                          {hasErrorDetails && (
+                            <button
+                              onClick={() => toggleErrorExpanded(testId)}
+                              className="flex-shrink-0 px-2 py-1 text-xs bg-red-100 dark:bg-red-900/40 hover:bg-red-200 dark:hover:bg-red-900/60 text-red-700 dark:text-red-300 rounded transition-colors"
+                              title="Show error details"
+                            >
+                              {isExpanded ? "Hide Details" : "Show Details"}
+                            </button>
                           )}
                         </div>
+
+                        {/* Error Details - Collapsible */}
+                        {hasErrorDetails && isExpanded && (
+                          <div className="mt-3 pt-3 border-t border-red-200 dark:border-red-800 space-y-3">
+                            {/* Error Type Badge */}
+                            {errorDetail.errorType && (
+                              <div className="flex items-center gap-2">
+                                <span className="inline-flex items-center px-2 py-1 rounded text-xs font-medium bg-red-200 dark:bg-red-900/60 text-red-800 dark:text-red-200">
+                                  {errorDetail.errorType === 'runtime' ? '⚠️ Runtime Error' :
+                                   errorDetail.errorType === 'syntax' ? '📝 Syntax Error' :
+                                   '❌ Assertion Failed'}
+                                </span>
+                              </div>
+                            )}
+
+                            {/* Stack Trace */}
+                            {errorDetail.stackTrace && (
+                              <div>
+                                <p className="text-xs font-semibold text-red-900 dark:text-red-200 mb-1">Stack Trace:</p>
+                                <pre className="text-xs bg-red-100 dark:bg-red-950/50 p-2 rounded overflow-x-auto font-mono text-red-900 dark:text-red-200 border border-red-200 dark:border-red-800">
+                                  {errorDetail.stackTrace}
+                                </pre>
+                              </div>
+                            )}
+
+                            {/* stderr */}
+                            {errorDetail.stderr && !errorDetail.stackTrace && (
+                              <div>
+                                <p className="text-xs font-semibold text-red-900 dark:text-red-200 mb-1">Error Message:</p>
+                                <pre className="text-xs bg-red-100 dark:bg-red-950/50 p-2 rounded overflow-x-auto font-mono text-red-900 dark:text-red-200 border border-red-200 dark:border-red-800 whitespace-pre-wrap">
+                                  {errorDetail.stderr}
+                                </pre>
+                              </div>
+                            )}
+
+                            {/* Console Output */}
+                            {errorDetail.consoleOutput && errorDetail.consoleOutput.length > 0 && (
+                              <div>
+                                <p className="text-xs font-semibold text-red-900 dark:text-red-200 mb-1">Console Output:</p>
+                                <div className="bg-gray-900 dark:bg-black p-2 rounded overflow-x-auto text-xs font-mono max-h-32 overflow-y-auto">
+                                  {errorDetail.consoleOutput.map((line: string, i: number) => (
+                                    <div
+                                      key={i}
+                                      className={
+                                        line.startsWith('[ERROR]') ? 'text-red-400' :
+                                        line.startsWith('[WARN]') ? 'text-yellow-400' :
+                                        'text-green-400'
+                                      }
+                                    >
+                                      {line}
+                                    </div>
+                                  ))}
+                                </div>
+                              </div>
+                            )}
+
+                            {/* DOM State */}
+                            {errorDetail.domState && (
+                              <div>
+                                <p className="text-xs font-semibold text-red-900 dark:text-red-200 mb-1">DOM State at Failure:</p>
+                                <pre className="text-xs bg-gray-100 dark:bg-gray-900 p-2 rounded overflow-x-auto font-mono text-gray-800 dark:text-gray-300 border border-gray-300 dark:border-gray-700 max-h-32 overflow-y-auto">
+                                  {errorDetail.domState}
+                                </pre>
+                              </div>
+                            )}
+                          </div>
+                        )}
                       </div>
                     </div>
                   );

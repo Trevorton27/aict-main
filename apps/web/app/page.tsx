@@ -2,10 +2,21 @@
 "use client";
 
 import Link from 'next/link';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useAuth } from '@clerk/nextjs';
+import { useRouter } from 'next/navigation';
 
 export default function HomePage() {
   const [showModal, setShowModal] = useState(false);
+  const { isSignedIn, isLoaded } = useAuth();
+  const router = useRouter();
+
+  // Auto-redirect logged-in users to /learn
+  useEffect(() => {
+    if (isLoaded && isSignedIn) {
+      router.push('/learn');
+    }
+  }, [isLoaded, isSignedIn, router]);
   return (
     <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white dark:from-gray-900 dark:to-gray-800 transition-colors">
       {/* Hero Section */}

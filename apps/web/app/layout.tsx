@@ -1,7 +1,6 @@
 // apps/web/app/layout.tsx
 "use client";
 
-import type { Metadata } from 'next';
 import './globals.css';
 import { useEffect, useState } from 'react';
 import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
@@ -60,7 +59,7 @@ export default function RootLayout({
                     </SignInButton>
                   </SignedOut>
                   <SignedIn>
-                    <UserButton afterSignOutUrl="/" />
+                    <UserButton />
                   </SignedIn>
                   <div className="w-px h-6 bg-light-border dark:bg-dark-700 mx-2"></div>
                   <button
