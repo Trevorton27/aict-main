@@ -2,7 +2,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { useUser, UserButton, SignedIn } from "@clerk/nextjs";
+import { useUser } from "@clerk/nextjs";
 import { ChatPanel } from "../components/ChatPanel";
 import { CodeEditor } from "../components/CodeEditor";
 import { PreviewSandbox } from "../components/PreviewSandbox";
@@ -334,7 +334,7 @@ export default function LearnPage() {
   };
 
   return (
-    <div className="h-screen flex flex-col bg-gray-100 dark:bg-gray-900 overflow-hidden transition-colors">
+    <div className="h-[calc(100vh-73px)] flex flex-col bg-gray-100 dark:bg-gray-900 overflow-hidden transition-colors">
       {/* Header */}
       <header className="bg-white dark:bg-gray-800 border-b border-gray-200 dark:border-gray-700 px-6 py-4 flex-shrink-0 transition-colors">
         <div className="flex items-center justify-between gap-4">
@@ -397,12 +397,6 @@ export default function LearnPage() {
               </span>
             </div>
 
-            {/* User Profile */}
-            <SignedIn>
-              <div className="ml-2">
-                <UserButton afterSignOutUrl="/" />
-              </div>
-            </SignedIn>
           </div>
         </div>
       </header>

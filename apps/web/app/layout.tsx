@@ -4,7 +4,10 @@
 import type { Metadata } from 'next';
 import './globals.css';
 import { useEffect, useState } from 'react';
-import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton } from '@clerk/nextjs';
+import { ClerkProvider, SignInButton, SignedIn, SignedOut, UserButton, ClerkLoaded, ClerkLoading } from '@clerk/nextjs';
+import Link from 'next/link';
+
+const hasClerk = !!process.env.NEXT_PUBLIC_CLERK_PUBLISHABLE_KEY;
 
 export default function RootLayout({
   children,
@@ -52,16 +55,37 @@ export default function RootLayout({
                   <span>AI Coding Tutor</span>
                 </a>
                 <div className="flex gap-2 items-center">
-                  <SignedOut>
-                    <SignInButton mode="modal" forceRedirectUrl="/learn" signUpForceRedirectUrl="/learn">
-                      <button className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
-                        Sign In
-                      </button>
-                    </SignInButton>
-                  </SignedOut>
-                  <SignedIn>
-                    <UserButton afterSignOutUrl="/" />
-                  </SignedIn>
+                  {hasClerk ? (
+                    <>
+                      <ClerkLoading>
+                        <Link
+                          href="/sign-in"
+                          className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle"
+                        >
+                          Sign In
+                        </Link>
+                      </ClerkLoading>
+                      <ClerkLoaded>
+                        <SignedOut>
+                          <SignInButton mode="modal" forceRedirectUrl="/learn" signUpForceRedirectUrl="/learn">
+                            <button className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle">
+                              Sign In
+                            </button>
+                          </SignInButton>
+                        </SignedOut>
+                        <SignedIn>
+                          <UserButton afterSignOutUrl="/" />
+                        </SignedIn>
+                      </ClerkLoaded>
+                    </>
+                  ) : (
+                    <Link
+                      href="/sign-in"
+                      className="px-4 py-2 rounded-xl text-sm font-medium text-text-light-body dark:text-gray-300 hover:bg-white dark:hover:bg-dark-800 hover:text-text-light-heading dark:hover:text-white transition-all duration-150 hover:shadow-subtle"
+                    >
+                      Sign In
+                    </Link>
+                  )}
                   <div className="w-px h-6 bg-light-border dark:bg-dark-700 mx-2"></div>
                   <button
                     onClick={toggleDarkMode}
