@@ -1,6 +1,6 @@
 // apps/web/app/api/v1/tools/make_quiz/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { verifyServiceToken } from "@/app/lib/auth";
+import { verifyServiceToken } from "@/lib/auth";
 import Anthropic from "@anthropic-ai/sdk";
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 export async function POST(req: NextRequest) {

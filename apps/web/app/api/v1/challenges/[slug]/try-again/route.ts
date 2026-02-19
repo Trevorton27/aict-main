@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { prisma } from "@/app/lib/server-db";
+import { prisma } from "@/lib/server-db";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 const MODEL = process.env.MODEL_FAST || "claude-3-haiku-20240307";
@@ -16,10 +16,11 @@ const SYS = `あなたは課題作成AIです。同じ学習目標を保ちつ�
   "tests": [ ... ]
 }`;
 
-export async function POST(req: Request, { params }: { params: { slug: string }}) {
+export async function POST(req: Request, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const { difficulty = "same" } = await req.json();
   const ch = await prisma.challenge.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     select: { title:true, objective:true, passCriteria:true, starter:true, tests:true, paramsSchema:true }
   });
   if (!ch) return new Response("Not found", { status: 404 });

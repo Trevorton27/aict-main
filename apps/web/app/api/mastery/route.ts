@@ -1,9 +1,7 @@
 // apps/web/app/api/mastery/route.ts
 
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/server-db";
 
 // Elo-style mastery scoring
 const K_FACTOR = 32; // How much each attempt affects score

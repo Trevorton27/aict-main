@@ -1,9 +1,7 @@
 // apps/web/app/api/tasks/[id]/route.ts
 
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/server-db";
 
 // GET /api/tasks/[id] - Get specific task with full details
 export async function GET(

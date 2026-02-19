@@ -1,12 +1,12 @@
 // apps/web/app/api/v1/chat.stream/route.ts
 import { NextRequest } from "next/server";
 import Anthropic from "@anthropic-ai/sdk";
-import { sseHeaders, writeSSE } from "@/app/lib/sse";
-import { verifyServiceToken } from "@/app/lib/auth";
-import { AGENT_DEFAULT } from "@/config/agent";
-import { chooseModel } from "@/app/lib/router";
-import { ensureJapaneseOrThrow } from "@/app/lib/validator";
-import { searchKnowledge } from "@/app/lib/rag";
+import { sseHeaders, writeSSE } from "@/lib/sse";
+import { verifyServiceToken } from "@/lib/auth";
+import { AGENT_DEFAULT } from "../../../../config/agent";
+import { chooseModel } from "@/lib/router";
+import { ensureJapaneseOrThrow } from "@/lib/validator";
+import { searchKnowledge } from "@/lib/rag";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 export const dynamic = "force-dynamic";
@@ -43,7 +43,7 @@ export async function POST(req: NextRequest) {
         resp.on("end", async () => { await writeSSE(writer, "done", { ok: true }); await writer.close(); });
         resp.on("error", async e => { await writeSSE(writer, "error", { error: String(e) }); await writer.close(); });
 
-        await resp.start();
+        await resp.finalMessage();
       } catch (err) {
         await writeSSE(writer, "error", { error: String(err) });
         await writer.close();

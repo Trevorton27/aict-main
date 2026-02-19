@@ -32,14 +32,9 @@ async function loadLocal(level?: number) {
 }
 
 async function loadDb(level?: number) {
-  const { PrismaClient } = await import("@prisma/client");
-  const prisma = new PrismaClient();
-  try {
-    const where = level ? { difficulty: level } : {};
-    return await prisma.task.findMany({ where, orderBy: { id: "asc" } });
-  } finally {
-    await prisma.$disconnect();
-  }
+  const { prisma } = await import("@/lib/server-db");
+  const where = level ? { difficulty: level } : {};
+  return await prisma.task.findMany({ where, orderBy: { id: "asc" } });
 }
 
 export async function GET(req: Request) {

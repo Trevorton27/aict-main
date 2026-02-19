@@ -1,6 +1,6 @@
 // apps/web/app/api/v1/tools/run_code/route.ts
 import { NextRequest, NextResponse } from "next/server";
-import { verifyServiceToken } from "@/app/lib/auth";
+import { verifyServiceToken } from "@/lib/auth";
 export async function POST(req: NextRequest) {
   verifyServiceToken(req);
   const body = await req.json();

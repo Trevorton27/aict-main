@@ -114,7 +114,7 @@ export async function GET(req: NextRequest) {
 
     // Calculate statistics
     const totalAttempts = attempts.length;
-    const successfulAttempts = attempts.filter(a => a.passed).length;
+    const successfulAttempts = attempts.filter((a: any) => a.passed).length;
     const successRate = totalAttempts > 0
       ? ((successfulAttempts / totalAttempts) * 100).toFixed(1)
       : '0';

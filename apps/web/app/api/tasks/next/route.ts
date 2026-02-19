@@ -1,9 +1,7 @@
 // apps/web/app/api/tasks/next/route.ts
 
 import { NextRequest, NextResponse } from "next/server";
-import { PrismaClient } from "@prisma/client";
-
-const prisma = new PrismaClient();
+import { prisma } from "@/lib/server-db";
 
 // POST /api/tasks/next - Get next recommended task
 export async function POST(req: NextRequest) {

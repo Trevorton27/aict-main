@@ -32,14 +32,14 @@ export async function GET(req: NextRequest) {
     });
 
     // Calculate overall mastery score
-    const totalMastery = progressRecords.reduce((sum, p) => sum + p.mastery, 0);
+    const totalMastery = progressRecords.reduce((sum: number, p: any) => sum + p.mastery, 0);
     const avgMastery = progressRecords.length > 0
       ? Math.round(totalMastery / progressRecords.length)
       : 800; // Default starting mastery
 
     // Calculate total attempts and successes
-    const totalAttempts = progressRecords.reduce((sum, p) => sum + p.attempts, 0);
-    const totalSuccesses = progressRecords.reduce((sum, p) => sum + p.successes, 0);
+    const totalAttempts = progressRecords.reduce((sum: number, p: any) => sum + p.attempts, 0);
+    const totalSuccesses = progressRecords.reduce((sum: number, p: any) => sum + p.successes, 0);
     const successRate = totalAttempts > 0
       ? ((totalSuccesses / totalAttempts) * 100).toFixed(1)
       : '0';

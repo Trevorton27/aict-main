@@ -39,7 +39,7 @@ export async function generateVariantForTask(opts: {
       description: task.description,
       prompt: task.prompt,
       scaffold: task.scaffold,
-      tests: task.tests?.map(t => ({ id: t.id, description: t.description, type: t.type })) ?? [],
+      tests: task.tests?.map(t => ({ id: t.id, code: t.code })) ?? [],
       hints: task.hints?.slice(0,3) ?? []
     }
   };

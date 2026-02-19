@@ -1,5 +1,5 @@
 import Anthropic from "@anthropic-ai/sdk";
-import { prisma } from "@/app/lib/server-db";
+import { prisma } from "@/lib/server-db";
 
 const anthropic = new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY! });
 const MODEL = process.env.MODEL_FAST || "claude-3-haiku-20240307"; // Haiku 4.5 slot
@@ -13,15 +13,16 @@ const SYS = `あなたは初学者向けWeb開発の講師AIです。常に日�
 - objective と passCriteria に沿って不足点だけ指摘
 出力は日本語。完成コードや長いコードブロックは出さない`;
 
-export async function POST(req: Request, { params }: { params: { slug: string }}) {
+export async function POST(req: Request, { params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params;
   const { files, lastTestResult, level = 1 } = await req.json();
   const ch = await prisma.challenge.findUnique({
-    where: { slug: params.slug },
+    where: { slug },
     include: { hintTemplates: true }
   });
   if (!ch) return new Response("Not found", { status: 404 });
 
-  const seed = ch.hintTemplates.find(t => t.level === level) || ch.hintTemplates[0];
+  const seed = ch.hintTemplates.find((t: any) => t.level === level) || ch.hintTemplates[0];
 
   const user = [
     `課題タイトル: ${ch.title}`,
